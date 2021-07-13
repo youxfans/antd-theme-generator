@@ -1,6 +1,6 @@
-import React from 'react';
-import PreviewWrapper from '../PreviewWrapper';
-import './style.less';
+import React from "react";
+import PreviewWrapper from "../PreviewWrapper";
+import "./style.less";
 
 const ColorPreview = () => (
   <PreviewWrapper id="Color" title="Color">
@@ -9,11 +9,6 @@ const ColorPreview = () => (
         <div className="color-item primary">
           <div className="color-item-content">
             <div className="name">@primary-color</div>
-          </div>
-        </div>
-        <div className="color-item primary-custom-var">
-          <div className="color-item-content">
-            <div className="name">--PC: @primary-color;</div>
           </div>
         </div>
         <div className="color-item success">

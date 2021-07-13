@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Row,
-  Col,
-  Layout,
-  Form,
-  Select,
-  message,
-  Button,
-  Spin,
-} from "antd";
+import { Row, Col, Layout, Form, Select, message, Button, Spin } from "antd";
 import {
   ColorPreview,
   TypographyPreview,
@@ -50,19 +41,20 @@ import {
   TimelinePreview,
   PopconfirmPreview,
   ModalPreview,
-  FormPreview
-} from './previews';
-
+  FormPreview,
+} from "./previews";
 
 import {
-  MenuFoldOutlined, MenuUnfoldOutlined, CloseOutlined
-} from '@ant-design/icons';
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  CloseOutlined,
+} from "@ant-design/icons";
 
-import Navbar from './Navbar';
+import Navbar from "./Navbar";
 import ColorPicker from "./ColorPicker";
-import darkVars from './dark.json';
-import lightVars from './light.json';
-import './styles/main.less';
+import darkVars from "./dark.json";
+import lightVars from "./light.json";
+import "./styles/main.less";
 
 // eslint-disable jsx-a11y/anchor-has-content
 const { Footer, Content, Sider } = Layout;
@@ -72,42 +64,42 @@ const Option = Select.Option;
 class App extends Component {
   constructor(props) {
     super(props);
-    let initialValue = lightVars;
-    let vars = {};
-    let themeName =  localStorage.getItem("theme-name") || 'light';
+    // let initialValue = lightVars;
+    // let vars = {};
+    // let themeName =  localStorage.getItem("theme-name") || 'light';
 
-    try {
-      vars = localStorage.getItem("app-theme");
-      if (!vars) {
-        vars = initialValue;
-      } else {
-        vars = Object.assign(
-          {},
-          JSON.parse(vars)
-        );
-      }
+    // try {
+    //   vars = localStorage.getItem("app-theme");
+    //   if (!vars) {
+    //     vars = initialValue;
+    //   } else {
+    //     vars = Object.assign(
+    //       {},
+    //       JSON.parse(vars)
+    //     );
+    //   }
 
-    } catch (e) {
-      vars = initialValue;
-    } finally {
-      this.state = {
-        vars, initialValue, size: 'default',
-        disabled: false,
-        themeName,
-        themeApplied: false,
-      };
-      window.less
-        .modifyVars(vars)
-        .then(() => { 
-          this.setState({ themeApplied: true });
-        })
-        .catch(error => {
-          message.error(`Failed to update theme`);
-        });
-    }
+    // } catch (e) {
+    //   vars = initialValue;
+    // } finally {
+    //   this.state = {
+    //     vars, initialValue, size: 'default',
+    //     disabled: false,
+    //     themeName,
+    //     themeApplied: false,
+    //   };
+    //   window.less
+    //     .modifyVars(vars)
+    //     .then(() => {
+    //       this.setState({ themeApplied: true });
+    //     })
+    //     .catch(error => {
+    //       message.error(`Failed to update theme`);
+    //     });
+    // }
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -115,7 +107,7 @@ class App extends Component {
       }
     });
   };
-  normFile = e => {
+  normFile = (e) => {
     console.log("Upload event:", e);
     if (Array.isArray(e)) {
       return e;
@@ -138,7 +130,7 @@ class App extends Component {
         this.setState({ vars });
         localStorage.setItem("app-theme", JSON.stringify(vars));
       })
-      .catch(error => {
+      .catch((error) => {
         message.error(`Failed to update theme`);
       });
   };
@@ -150,68 +142,72 @@ class App extends Component {
           type="sketch"
           small
           color={this.state.vars[varName]}
-          position={position || 'right'}
+          position={position || "right"}
           presetColors={[
-            '#F5222D',
-            '#FA541C',
-            '#FA8C16',
-            '#FAAD14',
-            '#FADB14',
-            '#A0D911',
-            '#52C41A',
-            '#13C2C2',
-            '#1890FF',
-            '#2F54EB',
-            '#722ED1',
-            '#EB2F96'
+            "#F5222D",
+            "#FA541C",
+            "#FA8C16",
+            "#FAAD14",
+            "#FADB14",
+            "#A0D911",
+            "#52C41A",
+            "#13C2C2",
+            "#1890FF",
+            "#2F54EB",
+            "#722ED1",
+            "#EB2F96",
           ]}
-          onChangeComplete={color => this.handleColorChange(varName, color)}
+          onChangeComplete={(color) => this.handleColorChange(varName, color)}
         />
       </Col>
-      <Col className="color-name" xs={20}>{varName}</Col>
+      <Col className="color-name" xs={20}>
+        {varName}
+      </Col>
     </Row>
   );
   resetTheme = () => {
     localStorage.setItem("app-theme", "{}");
-    localStorage.setItem("theme-name", 'light');
-    this.setState({ themeName: 'light' });
+    localStorage.setItem("theme-name", "light");
+    this.setState({ themeName: "light" });
     this.setState({ vars: this.state.initialValue });
-    window.less.modifyVars(this.state.initialValue).catch(error => {
+    window.less.modifyVars(this.state.initialValue).catch((error) => {
       message.error(`Failed to reset theme`);
     });
   };
 
-  onCollapse = collapsed => {
+  onCollapse = (collapsed) => {
     this.setState({ collapsed });
-    console.log('onCollapse', collapsed);
-  }
+    console.log("onCollapse", collapsed);
+  };
 
   render() {
-    const { collapsed, size, disabled, themeApplied } = this.state;
-    const colorPickerOptions = ["@primary-color", "@secondary-color", "@text-color", "@text-color-secondary", "@heading-color", "@layout-header-background", "@btn-primary-bg"];
+    // const { collapsed, size, disabled, themeApplied } = this.state;
+    const colorPickerOptions = [
+      "@primary-color",
+      "@secondary-color",
+      "@text-color",
+      "@text-color-secondary",
+      "@heading-color",
+      "@layout-header-background",
+      "@btn-primary-bg",
+    ];
     // const colorPickers = Object.keys(this.state.vars).filter(name => colorPickerOptions.indexOf(name) > -1).map((varName, index) =>
-    const colorPickers = colorPickerOptions.map((varName, index) =>
-      this.getColorPicker(varName, index > 3 ? 'top' : 'right')
-    );
+    // const colorPickers = colorPickerOptions.map((varName, index) =>
+    //   this.getColorPicker(varName, index > 3 ? "top" : "right")
+    // );
 
     const themeLayout = {
       labelCol: { span: 24 },
-      wrapperCol: { span: 24 }
+      wrapperCol: { span: 24 },
     };
-
-    if (!themeApplied) {
-      return (
-        <Spin size="large">
-          <Layout className="app" />
-        </Spin>
-      )
-    }
+    const disabled = false;
+    const size = "default";
     return (
       <Layout className="app">
         <Navbar />
         <Content className="content">
           <Layout>
-            <Sider
+            {/* <Sider
               breakpoint="lg"
               collapsedWidth={40}
               collapsed={collapsed}
@@ -262,11 +258,10 @@ class App extends Component {
                   {!collapsed ? "Reset Theme" : <CloseOutlined />}
                 </Button>
               </Row>
-
-            </Sider>
+            </Sider> */}
             <Content id="preview-content">
               <div className="preview">
-                <ColorPreview />
+                {/* <ColorPreview /> */}
                 <TypographyPreview />
                 <ButtonPreview disabled={disabled} size={size} />
                 <RadioPreview disabled={disabled} size={size} />
@@ -311,9 +306,6 @@ class App extends Component {
             </Content>
           </Layout>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>
-          Ant Design Live Theme ©2018 Created by Zohaib Ijaz (mzohaibqc)
-        </Footer>
       </Layout>
     );
   }

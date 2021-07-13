@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Layout, Menu, Drawer, Icon } from 'antd';
-import { Mobile, Default } from '../Responsive';
+import { Layout, Menu, Drawer, Button } from 'antd';
+import SettingForm from '../SettingForm';
 
 import './index.less';
 
@@ -23,9 +23,22 @@ const Navbar = props => {
   );
 
   return (
-    <Header className="app-header">
-      <div className="logo">Antd Live Theme</div>
-      <Default>{menu}</Default>
+    <Header className="app-header" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+      <div className="logo">Venus Design</div>
+      <Button onClick={() => setVisible(true)}>
+        Setting
+      </Button>
+      <Drawer
+        title="Theme Setting"
+        placement="right"
+        closable={false}
+        width={720}
+        onClose={() => setVisible(false)}
+        visible={visible}
+      >
+        <SettingForm />
+      </Drawer>
+      {/* <Default>{menu}</Default>
       <Mobile>
         <Icon type="bars" size="large" className="nav-icon" onClick={() => setVisible(true)} />
         <Drawer
@@ -36,10 +49,10 @@ const Navbar = props => {
           visible={visible}
           className="nav-drawer"
         >
-          <div className="logo">Antd Live Theme</div>
+          <div className="logo">Venus Design</div>
           {menu}
         </Drawer>
-      </Mobile>
+      </Mobile> */}
     </Header>
   );
 };
