@@ -12,10 +12,14 @@
     left: 0;
     width: 100%;
     .logo {
-      width: 160px;
+      // width: 160px;
       float: left;
       color: #ffffff;
       font-size: 18px;
+      margin-right: 24px;
+      img {
+        margin-right: 12px;
+      }
     }
 
     @media screen and (max-width: 576px) {
@@ -24,11 +28,16 @@
   }
   > .ant-layout-content {
     margin-top: 64px;
-    height: calc(100vh - 64px - 60px);
+    height: calc(100vh - 64px - 64px);
+    padding: 48px 48px 0;
+    background-image: @bg-image;
+    background-size: cover;
+    background-position: 50%;
 
     .ant-layout {
       height: 100%;
       overflow-y: auto;
+      background: @inner-bg;
     }
 
     .ant-layout-sider {
@@ -143,8 +152,9 @@
     }
     .ant-layout-content {
       // background-color: @body-background;
-      padding: 20px;
+      padding: 64px;
       min-height: 280px;
+      background-color: transparent;
       .ant-breadcrumb {
         width: 100%;
       }

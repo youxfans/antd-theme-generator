@@ -11,7 +11,7 @@
 @geekblue-base: #2f54eb;
 @lime-base: #a0d911;
 @gold-base: #faad14;
-@primary-color: @blue-6;
+@primary-color: @cyan-6;
 @info-color: #1890ff;
 @success-color: #52c41a;
 @processing-color: @primary-color;
@@ -155,7 +155,7 @@
 @menu-dark-arrow-color: #fff;
 @menu-dark-submenu-bg: #000c17;
 @menu-dark-highlight-color: #fff;
-@menu-dark-item-active-bg: #1890ff;
+@menu-dark-item-active-bg: @primary-color;
 @menu-dark-item-active-danger-bg: color(~`colorPalette('@{red-6}', 5) `);
 @table-bg: #fff;
 @table-header-bg: hsv(0, 0, 98%);
@@ -283,9 +283,15 @@
 @image-color: #fff;
 @image-preview-operation-color: fade(@white, 85%);
 @image-preview-operation-disabled-color: fade(@image-preview-operation-color, 45%);
+@bg-image: @light-bg-image;
+@inner-bg: @light-inner-bg;
 @select-item-selected-option-color: @primary-color;
 @secondary-color: @primary-color;
 @scrollbar-thumb: @primary-color;
+@dark-bg-image: url("http://10.22.60.12:8081/static/bg.f28b11d9.webp");
+@dark-inner-bg: fade(@black, 65%);
+@light-bg-image: url("http://10.22.60.12:8081/static/light-bg.4892dc8e.webp");
+@light-inner-bg: fade(@white, 65%);
 .ant-modal-mask, .ant-image-preview-mask {background-color: @modal-mask-bg;}
 html {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
 body {color: @text-color;background-color: @body-background;}
@@ -315,7 +321,7 @@ button::-moz-focus-inner,
 [type='submit']::-moz-focus-inner {border-style: none;}
 fieldset {border: 0;}
 legend {color: inherit;}
-mark {background-color: color(~`colorPalette("@{background-color-base}", 3)`);}
+mark {background-color: color(~`colorPalette("@{yellow-base}", 1)`);}
 ::selection {color: #fff;background: @text-selection-bg;}
 .anticon {color: inherit;}
 html {--antd-wave-shadow-color: @primary-color;}
@@ -720,7 +726,7 @@ html {--antd-wave-shadow-color: @primary-color;}
 .ant-cascader-picker {color: @text-color;background-color: @cascader-bg;border-radius: 2px;}
 .ant-cascader-picker-with-value .ant-cascader-picker-label {color: transparent;}
 .ant-cascader-picker-disabled {color: @disabled-color;background: @input-disabled-bg;}
-.ant-cascader-picker:focus .ant-cascader-input {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-cascader-picker:focus .ant-cascader-input {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-cascader-picker:focus .ant-cascader-input {border-right-width: 0;border-left-width: 1px !important;}
 .ant-cascader-picker-borderless .ant-cascader-input {border-color: transparent !important;box-shadow: none !important;}
 .ant-cascader-picker-show-search.ant-cascader-picker-focused {color: @disabled-color;}
@@ -845,7 +851,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-picker {color: @text-color;background: @picker-bg;border: 1px solid @select-border-color;border-radius: 2px;}
 .ant-picker:hover, .ant-picker-focused {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-picker:hover, .ant-input-rtl .ant-picker-focused {border-right-width: 0;border-left-width: 1px !important;}
-.ant-picker-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-picker-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-picker-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-picker.ant-picker-disabled {background: @input-disabled-bg;border-color: @select-border-color;}
 .ant-picker.ant-picker-disabled .ant-picker-suffix {color: @disabled-color;}
@@ -854,7 +860,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-picker-input > input::placeholder {color: @input-placeholder-color;}
 .ant-picker-input > input:hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-picker-input > input:hover {border-right-width: 0;border-left-width: 1px !important;}
-.ant-picker-input > input:focus, .ant-picker-input > input-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-picker-input > input:focus, .ant-picker-input > input-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-picker-input > input:focus, .ant-input-rtl .ant-picker-input > input-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-picker-input > input-disabled {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-picker-input > input-disabled:hover {border-color: @input-border-color;border-right-width: 1px !important;}
@@ -955,47 +961,47 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-form-item-has-success.ant-form-item-has-feedback .ant-form-item-children-icon {color: @success-color;}
 .ant-form-item-has-warning .ant-form-item-split {color: @warning-color;}
 .ant-form-item-has-warning .ant-input, .ant-form-item-has-warning .ant-input-affix-wrapper, .ant-form-item-has-warning .ant-input:hover, .ant-form-item-has-warning .ant-input-affix-wrapper:hover {border-color: @warning-color;}
-.ant-form-item-has-warning .ant-input:focus, .ant-form-item-has-warning .ant-input-affix-wrapper:focus, .ant-form-item-has-warning .ant-input-focused, .ant-form-item-has-warning .ant-input-affix-wrapper-focused {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(95, 20, 151, 0.2);}
+.ant-form-item-has-warning .ant-input:focus, .ant-form-item-has-warning .ant-input-affix-wrapper:focus, .ant-form-item-has-warning .ant-input-focused, .ant-form-item-has-warning .ant-input-affix-wrapper-focused {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(139, 31, 137, 0.2);}
 .ant-form-item-has-warning .ant-input:not(.ant-form-item-has-warning .ant-input-disabled) {background-color: @input-bg;}
 .ant-form-item-has-warning .ant-input-affix-wrapper:not(.ant-form-item-has-warning .ant-input-affix-wrapper-disabled) {background-color: @input-bg;}
 .ant-form-item-has-warning .ant-input-affix-wrapper input:focus {box-shadow: none !important;}
-.ant-form-item-has-warning .ant-calendar-picker-open .ant-calendar-picker-input {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(95, 20, 151, 0.2);}
+.ant-form-item-has-warning .ant-calendar-picker-open .ant-calendar-picker-input {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(139, 31, 137, 0.2);}
 .ant-form-item-has-warning .ant-input-prefix {color: @warning-color;}
 .ant-form-item-has-warning .ant-input-group-addon {color: @warning-color;border-color: @warning-color;}
 .ant-form-item-has-warning .has-feedback {color: @warning-color;}
 .ant-form-item-has-warning.ant-form-item-has-feedback .ant-form-item-children-icon {color: @warning-color;}
 .ant-form-item-has-warning .ant-select:not(.ant-select-borderless) .ant-select-selector {border-color: @warning-color !important;}
-.ant-form-item-has-warning .ant-select:not(.ant-select-borderless).ant-select-open .ant-select-selector, .ant-form-item-has-warning .ant-select:not(.ant-select-borderless).ant-select-focused .ant-select-selector {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(95, 20, 151, 0.2);}
+.ant-form-item-has-warning .ant-select:not(.ant-select-borderless).ant-select-open .ant-select-selector, .ant-form-item-has-warning .ant-select:not(.ant-select-borderless).ant-select-focused .ant-select-selector {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(139, 31, 137, 0.2);}
 .ant-form-item-has-warning .ant-input-number, .ant-form-item-has-warning .ant-picker {border-color: @warning-color;}
-.ant-form-item-has-warning .ant-input-number-focused, .ant-form-item-has-warning .ant-picker-focused, .ant-form-item-has-warning .ant-input-number:focus, .ant-form-item-has-warning .ant-picker:focus {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(95, 20, 151, 0.2);}
+.ant-form-item-has-warning .ant-input-number-focused, .ant-form-item-has-warning .ant-picker-focused, .ant-form-item-has-warning .ant-input-number:focus, .ant-form-item-has-warning .ant-picker:focus {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(139, 31, 137, 0.2);}
 .ant-form-item-has-warning .ant-input-number:not([disabled]):hover, .ant-form-item-has-warning .ant-picker:not([disabled]):hover {border-color: @warning-color;}
-.ant-form-item-has-warning .ant-cascader-picker:focus .ant-cascader-input {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(95, 20, 151, 0.2);}
+.ant-form-item-has-warning .ant-cascader-picker:focus .ant-cascader-input {border-color: color(~`colorPalette("@{warning-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(139, 31, 137, 0.2);}
 .ant-form-item-has-error .ant-form-item-split {color: @error-color;}
 .ant-form-item-has-error .ant-input, .ant-form-item-has-error .ant-input-affix-wrapper, .ant-form-item-has-error .ant-input:hover, .ant-form-item-has-error .ant-input-affix-wrapper:hover {border-color: @error-color;}
-.ant-form-item-has-error .ant-input:focus, .ant-form-item-has-error .ant-input-affix-wrapper:focus, .ant-form-item-has-error .ant-input-focused, .ant-form-item-has-error .ant-input-affix-wrapper-focused {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(225, 150, 68, 0.2);}
+.ant-form-item-has-error .ant-input:focus, .ant-form-item-has-error .ant-input-affix-wrapper:focus, .ant-form-item-has-error .ant-input-focused, .ant-form-item-has-error .ant-input-affix-wrapper-focused {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(11, 230, 86, 0.2);}
 .ant-form-item-has-error .ant-input:not(.ant-form-item-has-error .ant-input-disabled) {background-color: @input-bg;}
 .ant-form-item-has-error .ant-input-affix-wrapper:not(.ant-form-item-has-error .ant-input-affix-wrapper-disabled) {background-color: @input-bg;}
 .ant-form-item-has-error .ant-input-affix-wrapper input:focus {box-shadow: none !important;}
-.ant-form-item-has-error .ant-calendar-picker-open .ant-calendar-picker-input {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(225, 150, 68, 0.2);}
+.ant-form-item-has-error .ant-calendar-picker-open .ant-calendar-picker-input {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(11, 230, 86, 0.2);}
 .ant-form-item-has-error .ant-input-prefix {color: @error-color;}
 .ant-form-item-has-error .ant-input-group-addon {color: @error-color;border-color: @error-color;}
 .ant-form-item-has-error .has-feedback {color: @error-color;}
 .ant-form-item-has-error.ant-form-item-has-feedback .ant-form-item-children-icon {color: @error-color;}
 .ant-form-item-has-error .ant-select:not(.ant-select-borderless) .ant-select-selector {border-color: @error-color !important;}
-.ant-form-item-has-error .ant-select:not(.ant-select-borderless).ant-select-open .ant-select-selector, .ant-form-item-has-error .ant-select:not(.ant-select-borderless).ant-select-focused .ant-select-selector {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(225, 150, 68, 0.2);}
+.ant-form-item-has-error .ant-select:not(.ant-select-borderless).ant-select-open .ant-select-selector, .ant-form-item-has-error .ant-select:not(.ant-select-borderless).ant-select-focused .ant-select-selector {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(11, 230, 86, 0.2);}
 .ant-form-item-has-error .ant-input-group-addon .ant-select.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {border: 0;}
 .ant-form-item-has-error .ant-select.ant-select-auto-complete .ant-input:focus {border-color: @error-color;}
 .ant-form-item-has-error .ant-input-number, .ant-form-item-has-error .ant-picker {border-color: @error-color;}
-.ant-form-item-has-error .ant-input-number-focused, .ant-form-item-has-error .ant-picker-focused, .ant-form-item-has-error .ant-input-number:focus, .ant-form-item-has-error .ant-picker:focus {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(225, 150, 68, 0.2);}
+.ant-form-item-has-error .ant-input-number-focused, .ant-form-item-has-error .ant-picker-focused, .ant-form-item-has-error .ant-input-number:focus, .ant-form-item-has-error .ant-picker:focus {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(11, 230, 86, 0.2);}
 .ant-form-item-has-error .ant-input-number:not([disabled]):hover, .ant-form-item-has-error .ant-picker:not([disabled]):hover {border-color: @error-color;}
 .ant-form-item-has-error .ant-mention-wrapper .ant-mention-editor, .ant-form-item-has-error .ant-mention-wrapper .ant-mention-editor:not([disabled]):hover {border-color: @error-color;}
-.ant-form-item-has-error .ant-mention-wrapper.ant-mention-active:not([disabled]) .ant-mention-editor, .ant-form-item-has-error .ant-mention-wrapper .ant-mention-editor:not([disabled]):focus {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(225, 150, 68, 0.2);}
-.ant-form-item-has-error .ant-cascader-picker:focus .ant-cascader-input {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(225, 150, 68, 0.2);}
+.ant-form-item-has-error .ant-mention-wrapper.ant-mention-active:not([disabled]) .ant-mention-editor, .ant-form-item-has-error .ant-mention-wrapper .ant-mention-editor:not([disabled]):focus {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(11, 230, 86, 0.2);}
+.ant-form-item-has-error .ant-cascader-picker:focus .ant-cascader-input {border-color: color(~`colorPalette("@{error-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(11, 230, 86, 0.2);}
 .ant-form-item-has-error .ant-transfer-list {border-color: @error-color;}
 .ant-form-item-has-error .ant-transfer-list-search:not([disabled]) {border-color: @input-border-color;}
 .ant-form-item-has-error .ant-transfer-list-search:not([disabled]):hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-form-item-has-error .ant-transfer-list-search:not([disabled]):hover {border-right-width: 0;border-left-width: 1px !important;}
-.ant-form-item-has-error .ant-transfer-list-search:not([disabled]):focus {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-form-item-has-error .ant-transfer-list-search:not([disabled]):focus {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-form-item-has-error .ant-transfer-list-search:not([disabled]):focus {border-right-width: 0;border-left-width: 1px !important;}
 .ant-form-item-has-error .ant-radio-button-wrapper {border-color: @error-color !important;}
 .ant-form-item-has-error .ant-radio-button-wrapper:not(:first-child)::before {background-color: @error-color;}
@@ -1009,14 +1015,14 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-form-item-label > label .ant-form-item-optional {color: @text-color-secondary;}
 .ant-form-item-label > label .ant-form-item-tooltip {color: @text-color-secondary;}
 .ant-form-item-explain, .ant-form-item-extra {color: @text-color-secondary;}
-.ant-image-img-placeholder {background-color: @image-bg;background-repeat: no-repeat;background-position: center center;background-size: 30%;}
+.ant-image-img-placeholder {background-color: @image-bg;background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTQuNSAyLjVoLTEzQS41LjUgMCAwIDAgMSAzdjEwYS41LjUgMCAwIDAgLjUuNWgxM2EuNS41IDAgMCAwIC41LS41VjNhLjUuNSAwIDAgMC0uNS0uNXpNNS4yODEgNC43NWExIDEgMCAwIDEgMCAyIDEgMSAwIDAgMSAwLTJ6bTguMDMgNi44M2EuMTI3LjEyNyAwIDAgMS0uMDgxLjAzSDIuNzY5YS4xMjUuMTI1IDAgMCAxLS4wOTYtLjIwN2wyLjY2MS0zLjE1NmEuMTI2LjEyNiAwIDAgMSAuMTc3LS4wMTZsLjAxNi4wMTZMNy4wOCAxMC4wOWwyLjQ3LTIuOTNhLjEyNi4xMjYgMCAwIDEgLjE3Ny0uMDE2bC4wMTUuMDE2IDMuNTg4IDQuMjQ0YS4xMjcuMTI3IDAgMCAxLS4wMi4xNzV6IiBmaWxsPSIjOEM4QzhDIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48L3N2Zz4=);background-repeat: no-repeat;background-position: center center;background-size: 30%;}
 .ant-image-preview-operations {color: @text-color;color: @image-preview-operation-color;background: fade(@modal-mask-bg, 10%);}
 .ant-image-preview-operations-operation-disabled {color: @image-preview-operation-disabled-color;}
 .ant-input-affix-wrapper {color: @input-color;background-color: @input-bg;background-image: none;border: 1px solid @input-border-color;border-radius: 2px;}
 .ant-input-affix-wrapper::placeholder {color: @input-placeholder-color;}
 .ant-input-affix-wrapper:hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-input-affix-wrapper:hover {border-right-width: 0;border-left-width: 1px !important;}
-.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-input-affix-wrapper:focus, .ant-input-rtl .ant-input-affix-wrapper-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-input-affix-wrapper-disabled {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-input-affix-wrapper-disabled:hover {border-color: @input-border-color;border-right-width: 1px !important;}
@@ -1037,7 +1043,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-input::placeholder {color: @input-placeholder-color;}
 .ant-input:hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-input:hover {border-right-width: 0;border-left-width: 1px !important;}
-.ant-input:focus, .ant-input-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-input:focus, .ant-input-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-input:focus, .ant-input-rtl .ant-input-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-input-disabled {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-input-disabled:hover {border-color: @input-border-color;border-right-width: 1px !important;}
@@ -1100,7 +1106,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-input-number::placeholder {color: @input-placeholder-color;}
 .ant-input-number:hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-input-number:hover {border-right-width: 0;border-left-width: 1px !important;}
-.ant-input-number:focus, .ant-input-number-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-input-number:focus, .ant-input-number-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-input-number:focus, .ant-input-rtl .ant-input-number-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-input-number-disabled {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-input-number-disabled:hover {border-color: @input-border-color;border-right-width: 1px !important;}
@@ -1112,7 +1118,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-input-number-handler:hover .ant-input-number-handler-up-inner, .ant-input-number-handler:hover .ant-input-number-handler-down-inner {color: color(~`colorPalette("@{primary-color}", 5)`);}
 .ant-input-number-handler-up-inner, .ant-input-number-handler-down-inner {color: inherit;color: @text-color-secondary;}
 .ant-input-number:hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
-.ant-input-number-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-input-number-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-input-number-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-input-number-disabled {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-input-number-disabled:hover {border-color: @input-border-color;border-right-width: 1px !important;}
@@ -1160,7 +1166,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-mentions::placeholder {color: @input-placeholder-color;}
 .ant-mentions:hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-mentions:hover {border-right-width: 0;border-left-width: 1px !important;}
-.ant-mentions:focus, .ant-mentions-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-mentions:focus, .ant-mentions-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-mentions:focus, .ant-input-rtl .ant-mentions-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-mentions-disabled {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-mentions-disabled:hover {border-color: @input-border-color;border-right-width: 1px !important;}
@@ -1169,7 +1175,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-mentions-borderless, .ant-mentions-borderless:hover, .ant-mentions-borderless:focus, .ant-mentions-borderless-focused, .ant-mentions-borderless-disabled, .ant-mentions-borderless[disabled] {background-color: transparent;border: none;box-shadow: none;}
 .ant-mentions-disabled > textarea {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-mentions-disabled > textarea:hover {border-color: @input-border-color;border-right-width: 1px !important;}
-.ant-mentions-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-mentions-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-mentions-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-mentions > textarea {border: none;}
 .ant-mentions > textarea::placeholder {color: @input-placeholder-color;}
@@ -1320,7 +1326,7 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-pagination-options-quick-jumper input::placeholder {color: @input-placeholder-color;}
 .ant-pagination-options-quick-jumper input:hover {border-color: color(~`colorPalette("@{primary-color}", 5)`);border-right-width: 1px !important;}
 .ant-input-rtl .ant-pagination-options-quick-jumper input:hover {border-right-width: 0;border-left-width: 1px !important;}
-.ant-pagination-options-quick-jumper input:focus, .ant-pagination-options-quick-jumper input-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-pagination-options-quick-jumper input:focus, .ant-pagination-options-quick-jumper input-focused {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-pagination-options-quick-jumper input:focus, .ant-input-rtl .ant-pagination-options-quick-jumper input-focused {border-right-width: 0;border-left-width: 1px !important;}
 .ant-pagination-options-quick-jumper input-disabled {color: @input-disabled-color;background-color: @input-disabled-bg;}
 .ant-pagination-options-quick-jumper input-disabled:hover {border-color: @input-border-color;border-right-width: 1px !important;}
@@ -1423,12 +1429,12 @@ tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child::afte
 .ant-result-content {background-color: @background-color-light;}
 .ant-select-single.ant-select-open .ant-select-selection-item {color: @input-placeholder-color;}
 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {background-color: @select-background;border: 1px solid @select-border-color;border-radius: 2px;}
-.ant-select-focused:not(.ant-select-disabled).ant-select-single:not(.ant-select-customize-input) .ant-select-selector {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-select-focused:not(.ant-select-disabled).ant-select-single:not(.ant-select-customize-input) .ant-select-selector {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-select-focused:not(.ant-select-disabled).ant-select-single:not(.ant-select-customize-input) .ant-select-selector {border-right-width: 0;border-left-width: 1px !important;}
 .ant-select-disabled.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {color: @disabled-color;background: @input-disabled-bg;}
 .ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {background: transparent;border: none;}
 .ant-select-multiple .ant-select-selector {background-color: @select-background;border: 1px solid @select-border-color;border-radius: 2px;}
-.ant-select-focused:not(.ant-select-disabled).ant-select-multiple .ant-select-selector {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(16, 190, 175, 0.2);}
+.ant-select-focused:not(.ant-select-disabled).ant-select-multiple .ant-select-selector {border-color: color(~`colorPalette("@{outline-color}", 5)`);border-right-width: 1px !important;box-shadow: 0 0 0 2px rgba(84, 212, 15, 0.2);}
 .ant-input-rtl .ant-select-focused:not(.ant-select-disabled).ant-select-multiple .ant-select-selector {border-right-width: 0;border-left-width: 1px !important;}
 .ant-select-disabled.ant-select-multiple .ant-select-selector {color: @disabled-color;background: @input-disabled-bg;}
 .ant-select-multiple .ant-select-selector .ant-select-selection-search-input {background: transparent;border: none;}
@@ -1681,36 +1687,36 @@ tr.ant-table-expanded-row:hover > td {background: @table-expanded-row-bg;}
 .ant-tag-checkable:active, .ant-tag-checkable-checked {color: #fff;}
 .ant-tag-checkable-checked {background-color: @primary-color;}
 .ant-tag-checkable:active {background-color: color(~`colorPalette("@{primary-color}", 7)`);}
-.ant-tag-pink {color: @pink-base;background: color(~`colorPalette("@{slider-track-background-color}", 1)`);border-color: color(~`colorPalette("@{pink-base}", 3)`);}
+.ant-tag-pink {color: @pink-base;background: color(~`colorPalette("@{avatar-color}", 1)`);border-color: color(~`colorPalette("@{avatar-color}", 3)`);}
 .ant-tag-pink-inverse {color: #fff;background: @pink-base;border-color: @pink-base;}
 .ant-tag-magenta {color: @magenta-base;background: color(~`colorPalette("@{magenta-base}", 1)`);border-color: color(~`colorPalette("@{magenta-base}", 3)`);}
 .ant-tag-magenta-inverse {color: #fff;background: @magenta-base;border-color: @magenta-base;}
-.ant-tag-red {color: @red-base;background: color(~`colorPalette("@{red-base}", 1)`);border-color: color(~`colorPalette("@{red-base}", 3)`);}
+.ant-tag-red {color: @red-base;background: color(~`colorPalette("@{dropdown-menu-bg}", 2)`);border-color: color(~`colorPalette("@{red-base}", 3)`);}
 .ant-tag-red-inverse {color: #fff;background: @red-base;border-color: @red-base;}
-.ant-tag-volcano {color: @volcano-base;background: color(~`colorPalette("@{alert-success-icon-color}", 1)`);border-color: color(~`colorPalette("@{alert-success-icon-color}", 3)`);}
+.ant-tag-volcano {color: @volcano-base;background: color(~`colorPalette("@{volcano-base}", 1)`);border-color: color(~`colorPalette("@{volcano-base}", 3)`);}
 .ant-tag-volcano-inverse {color: #fff;background: @volcano-base;border-color: @volcano-base;}
-.ant-tag-orange {color: @orange-base;background: color(~`colorPalette("@{notification-bg}", 1)`);border-color: color(~`colorPalette("@{notification-bg}", 3)`);}
+.ant-tag-orange {color: @orange-base;background: color(~`colorPalette("@{alert-error-border-color}", 1)`);border-color: color(~`colorPalette("@{orange-base}", 3)`);}
 .ant-tag-orange-inverse {color: #fff;background: @orange-base;border-color: @orange-base;}
-.ant-tag-yellow {color: @yellow-base;background: color(~`colorPalette("@{background-color-base}", 3)`);border-color: color(~`colorPalette("@{yellow-base}", 3)`);}
+.ant-tag-yellow {color: @yellow-base;background: color(~`colorPalette("@{yellow-base}", 1)`);border-color: color(~`colorPalette("@{yellow-base}", 3)`);}
 .ant-tag-yellow-inverse {color: #fff;background: @yellow-base;border-color: @yellow-base;}
-.ant-tag-gold {color: @gold-base;background: color(~`colorPalette("@{skeleton-color}", 1)`);border-color: color(~`colorPalette("@{gold-base}", 3)`);}
+.ant-tag-gold {color: @gold-base;background: color(~`colorPalette("@{gold-base}", 1)`);border-color: color(~`colorPalette("@{gold-base}", 3)`);}
 .ant-tag-gold-inverse {color: #fff;background: @gold-base;border-color: @gold-base;}
-.ant-tag-cyan {color: @cyan-base;background: color(~`colorPalette("@{table-expand-icon-bg}", 1)`);border-color: color(~`colorPalette("@{table-expand-icon-bg}", 1)`);}
+.ant-tag-cyan {color: @cyan-base;background: color(~`colorPalette("@{collapse-content-bg}", 1)`);border-color: color(~`colorPalette("@{cyan-base}", 3)`);}
 .ant-tag-cyan-inverse {color: #fff;background: @cyan-base;border-color: @cyan-base;}
-.ant-tag-lime {color: @lime-base;background: color(~`colorPalette("@{lime-base}", 1)`);border-color: color(~`colorPalette("@{lime-base}", 3)`);}
+.ant-tag-lime {color: @lime-base;background: color(~`colorPalette("@{picker-basic-cell-disabled-bg}", 3)`);border-color: color(~`colorPalette("@{lime-base}", 3)`);}
 .ant-tag-lime-inverse {color: #fff;background: @lime-base;border-color: @lime-base;}
-.ant-tag-green {color: @green-base;background: color(~`colorPalette("@{alert-info-icon-color}", 1)`);border-color: color(~`colorPalette("@{green-base}", 3)`);}
+.ant-tag-green {color: @green-base;background: color(~`colorPalette("@{slider-handle-color}", 1)`);border-color: color(~`colorPalette("@{green-base}", 3)`);}
 .ant-tag-green-inverse {color: #fff;background: @green-base;border-color: @green-base;}
-.ant-tag-blue {color: @blue-base;background: color(~`colorPalette("@{table-header-sort-active-bg}", 1)`);border-color: color(~`colorPalette("@{blue-base}", 3)`);}
+.ant-tag-blue {color: @blue-base;background: color(~`colorPalette("@{alert-error-border-color}", 1)`);border-color: color(~`colorPalette("@{blue-base}", 3)`);}
 .ant-tag-blue-inverse {color: #fff;background: @blue-base;border-color: @blue-base;}
-.ant-tag-geekblue {color: @geekblue-base;background: color(~`colorPalette("@{table-header-bg-sm}", 1)`);border-color: color(~`colorPalette("@{geekblue-base}", 3)`);}
+.ant-tag-geekblue {color: @geekblue-base;background: color(~`colorPalette("@{table-expanded-row-bg}", 1)`);border-color: color(~`colorPalette("@{geekblue-base}", 3)`);}
 .ant-tag-geekblue-inverse {color: #fff;background: @geekblue-base;border-color: @geekblue-base;}
-.ant-tag-purple {color: @purple-base;background: color(~`colorPalette("@{purple-base}", 1)`);border-color: color(~`colorPalette("@{purple-base}", 3)`);}
+.ant-tag-purple {color: @purple-base;background: color(~`colorPalette("@{notification-bg}", 1)`);border-color: color(~`colorPalette("@{purple-base}", 3)`);}
 .ant-tag-purple-inverse {color: #fff;background: @purple-base;border-color: @purple-base;}
-.ant-tag-success {color: @green-base;background: color(~`colorPalette("@{alert-info-icon-color}", 1)`);border-color: color(~`colorPalette("@{green-base}", 3)`);}
-.ant-tag-processing {color: @blue-base;background: color(~`colorPalette("@{table-header-sort-active-bg}", 1)`);border-color: color(~`colorPalette("@{blue-base}", 3)`);}
-.ant-tag-error {color: @red-base;background: color(~`colorPalette("@{red-base}", 1)`);border-color: color(~`colorPalette("@{red-base}", 3)`);}
-.ant-tag-warning {color: @orange-base;background: color(~`colorPalette("@{notification-bg}", 1)`);border-color: color(~`colorPalette("@{notification-bg}", 3)`);}
+.ant-tag-success {color: @green-base;background: color(~`colorPalette("@{slider-handle-color}", 1)`);border-color: color(~`colorPalette("@{green-base}", 3)`);}
+.ant-tag-processing {color: @blue-base;background: color(~`colorPalette("@{alert-error-border-color}", 1)`);border-color: color(~`colorPalette("@{blue-base}", 3)`);}
+.ant-tag-error {color: @red-base;background: color(~`colorPalette("@{dropdown-menu-bg}", 2)`);border-color: color(~`colorPalette("@{red-base}", 3)`);}
+.ant-tag-warning {color: @orange-base;background: color(~`colorPalette("@{alert-error-border-color}", 1)`);border-color: color(~`colorPalette("@{orange-base}", 3)`);}
 .ant-timeline {color: @text-color;}
 .ant-timeline-item-tail {border-left: 2px solid @timeline-color;}
 .ant-timeline-item-pending .ant-timeline-item-head {background-color: transparent;}
@@ -1914,6 +1920,9 @@ a.ant-typography[disabled], .ant-typography a[disabled] {color: @disabled-color;
 .ant-upload-list-picture-card .ant-upload-list-item-actions .anticon-eye:hover, .ant-upload-list-picture-card .ant-upload-list-item-actions .anticon-download:hover, .ant-upload-list-picture-card .ant-upload-list-item-actions .anticon-delete:hover {color: #fff;}
 .ant-upload-list-picture-card .ant-upload-list-item-uploading.ant-upload-list-item {background-color: @background-color-light;}
 .ant-upload-list .ant-upload-success-icon {color: @success-color;}
+.App-header {background-color: #282c34;color: white;}
+.App-link {color: #61dafb;}
+.content {background-image: url(http://10.22.60.12:8081/static/bg.f28b11d9.webp);background-size: cover;background-position: 50%;}
 .theme-card .toggle {background: white;border: 1px solid #e8e8e8;}
 body *::-webkit-scrollbar-track {border-radius: 6px;}
 body *::-webkit-scrollbar-thumb {background-color: @scrollbar-thumb;border-radius: 6px;}
@@ -1952,22 +1961,27 @@ body *::-webkit-scrollbar-thumb {background-color: @scrollbar-thumb;border-radiu
 .dashboard {color: @text-color;}
 .secondary {color: @secondary-color;}
 .components .component-row .component-col .badge-square {border-radius: 4px;}
-.dashboard {color: rgba(0, 0, 0, 0.85);}
-.secondary {color: #1890ff;}
-.components .component-row .component-col .badge-square {border-radius: 4px;}
 .app {background-color: @body-background;}
 .app .ant-layout-header .logo {color: #ffffff;}
+.app > .ant-layout-content {background-image: @bg-image;background-size: cover;background-position: 50%;}
+.app > .ant-layout-content .ant-layout {background: @inner-bg;}
 .app > .ant-layout-content .ant-layout-sider .choose-theme label {color: @text-color inverse;}
 .app > .ant-layout-content .ant-layout-sider .theme-heading {color: @text-color inverse;}
 .app > .ant-layout-content .ant-layout-sider .color-row .color-name {color: @text-color inverse;}
+.app > .ant-layout-content .ant-layout-content {background-color: transparent;}
 .logo h1 {color: @text-color inverse;}
 .components .component-row .component-col .badge-square {border-radius: 4px;}
 .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {color: @select-item-selected-option-color;}
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable */
 .bezierEasingMixin() {
 @functions: ~`(function() {var NEWTON_ITERATIONS = 4;var NEWTON_MIN_SLOPE = 0.001;var SUBDIVISION_PRECISION = 0.0000001;var SUBDIVISION_MAX_ITERATIONS = 10;var kSplineTableSize = 11;var kSampleStepSize = 1.0 / (kSplineTableSize - 1.0);var float32ArraySupported = typeof Float32Array === 'function';function A (aA1, aA2) { return 1.0 - 3.0 * aA2 + 3.0 * aA1; }
   function B (aA1, aA2) { return 3.0 * aA2 - 6.0 * aA1; }
   function C (aA1)      { return 3.0 * aA1; }
+  // Returns x(t) given t, x1, and x2, or y(t) given t, y1, and y2.
   function calcBezier (aT, aA1, aA2) { return ((A(aA1, aA2) * aT + B(aA1, aA2)) * aT + C(aA1)) * aT; }
+  // Returns dx/dt given t, x1, and x2, or dy/dt given t, y1, and y2.
   function getSlope (aT, aA1, aA2) { return 3.0 * A(aA1, aA2) * aT * aT + 2.0 * B(aA1, aA2) * aT + C(aA1); }
   function binarySubdivide (aX, aA, aB, mX1, mX2) {var currentX, currentT, i = 0;do {currentT = aA + (aB - aA) / 2.0;currentX = calcBezier(currentT, mX1, mX2) - aX;if (currentX > 0.0) {aB = currentT;} else {aA = currentT;}
     } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS);return currentT;}
@@ -1975,19 +1989,30 @@ body *::-webkit-scrollbar-thumb {background-color: @scrollbar-thumb;border-radiu
      var currentX = calcBezier(aGuessT, mX1, mX2) - aX;aGuessT -= currentX / currentSlope;}
    return aGuessT;}
   var BezierEasing = function (mX1, mY1, mX2, mY2) {if (!(0 <= mX1 && mX1 <= 1 && 0 <= mX2 && mX2 <= 1)) {throw new Error('bezier x values must be in [0, 1] range');}
+    // Precompute samples table
     var sampleValues = float32ArraySupported ? new Float32Array(kSplineTableSize) : new Array(kSplineTableSize);if (mX1 !== mY1 || mX2 !== mY2) {for (var i = 0; i < kSplineTableSize; ++i) {sampleValues[i] = calcBezier(i * kSampleStepSize, mX1, mX2);}
     }
     function getTForX (aX) {var intervalStart = 0.0;var currentSample = 1;var lastSample = kSplineTableSize - 1;for (; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample) {intervalStart += kSampleStepSize;}
-      --currentSample;var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);var guessForT = intervalStart + dist * kSampleStepSize;var initialSlope = getSlope(guessForT, mX1, mX2);if (initialSlope >= NEWTON_MIN_SLOPE) {return newtonRaphsonIterate(aX, guessForT, mX1, mX2);} else if (initialSlope === 0.0) {return guessForT;} else {return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2);}
+      --currentSample;// Interpolate to provide an initial guess for t
+      var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);var guessForT = intervalStart + dist * kSampleStepSize;var initialSlope = getSlope(guessForT, mX1, mX2);if (initialSlope >= NEWTON_MIN_SLOPE) {return newtonRaphsonIterate(aX, guessForT, mX1, mX2);} else if (initialSlope === 0.0) {return guessForT;} else {return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2);}
     }
-    return function BezierEasing (x) {if (mX1 === mY1 && mX2 === mY2) {return x; 
+    return function BezierEasing (x) {if (mX1 === mY1 && mX2 === mY2) {return x; // linear
       }
+      // Because JavaScript number are imprecise, we should guarantee the extremes are right.
       if (x === 0) {return 0;}
       if (x === 1) {return 1;}
-      return calcBezier(getTForX(x), mY1, mY2);};};this.colorEasing = BezierEasing(0.26, 0.09, 0.37, 0.18);return '';})()`;}
+      return calcBezier(getTForX(x), mY1, mY2);};};this.colorEasing = BezierEasing(0.26, 0.09, 0.37, 0.18);// less 3 requires a return
+  return '';})()`;}
+// It is hacky way to make this function will be compiled preferentially by less
+// resolve error: `ReferenceError: colorPalette is not defined`
+// https://github.com/ant-design/ant-motion/issues/44
 .bezierEasingMixin();
+/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .tinyColorMixin() {
 @functions: ~`(function() {
+// TinyColor v1.4.1
+// https://github.com/bgrins/TinyColor
+// 2016-07-07, Brian Grinstead, MIT License
 var trimLeft = /^\s+/,
     trimRight = /\s+$/,
     tinyCounter = 0,
@@ -1995,7 +2020,9 @@ var trimLeft = /^\s+/,
     mathMin = Math.min,
     mathMax = Math.max,
     mathRandom = Math.random;
-function tinycolor (color, opts) {color = (color) ? color : '';opts = opts || { };if (color instanceof tinycolor) {return color;}
+function tinycolor (color, opts) {color = (color) ? color : '';opts = opts || { };// If input is already a tinycolor, return itself
+    if (color instanceof tinycolor) {return color;}
+    // If we are called as a function, call using new instead
     if (!(this instanceof tinycolor)) {return new tinycolor(color, opts);}
     var rgb = inputToRGB(color);this._originalInput = color,
     this._r = rgb.r,
@@ -2003,7 +2030,11 @@ function tinycolor (color, opts) {color = (color) ? color : '';opts = opts || { 
     this._b = rgb.b,
     this._a = rgb.a,
     this._roundA = mathRound(100*this._a) / 100,
-    this._format = opts.format || rgb.format;this._gradientType = opts.gradientType;if (this._r < 1) { this._r = mathRound(this._r); }
+    this._format = opts.format || rgb.format;this._gradientType = opts.gradientType;// Don't let the range of [0,255] come back in [0,1].
+    // Potentially lose a little bit of precision here, but will fix issues where
+    // .5 gets interpreted as half of the total, instead of half of 1
+    // If it was supposed to be 128, this was already taken care of by inputToRgb
+    if (this._r < 1) { this._r = mathRound(this._r); }
     if (this._g < 1) { this._g = mathRound(this._g); }
     if (this._b < 1) { this._b = mathRound(this._b); }
     this._ok = rgb.ok;this._tc_id = tinyCounter++;}
@@ -2013,8 +2044,10 @@ tinycolor.prototype = {isDark: function() {return this.getBrightness() < 128;},
     getOriginalInput: function() {return this._originalInput;},
     getFormat: function() {return this._format;},
     getAlpha: function() {return this._a;},
-    getBrightness: function() {var rgb = this.toRgb();return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;},
-    getLuminance: function() {var rgb = this.toRgb();var RsRGB, GsRGB, BsRGB, R, G, B;RsRGB = rgb.r/255;GsRGB = rgb.g/255;BsRGB = rgb.b/255;if (RsRGB <= 0.03928) {R = RsRGB / 12.92;} else {R = Math.pow(((RsRGB + 0.055) / 1.055), 2.4);}
+    getBrightness: function() {//http://www.w3.org/TR/AERT#color-contrast
+        var rgb = this.toRgb();return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;},
+    getLuminance: function() {//http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+        var rgb = this.toRgb();var RsRGB, GsRGB, BsRGB, R, G, B;RsRGB = rgb.r/255;GsRGB = rgb.g/255;BsRGB = rgb.b/255;if (RsRGB <= 0.03928) {R = RsRGB / 12.92;} else {R = Math.pow(((RsRGB + 0.055) / 1.055), 2.4);}
         if (GsRGB <= 0.03928) {G = GsRGB / 12.92;} else {G = Math.pow(((GsRGB + 0.055) / 1.055), 2.4);}
         if (BsRGB <= 0.03928) {B = BsRGB / 12.92;} else {B = Math.pow(((BsRGB + 0.055) / 1.055), 2.4);}
         return (0.2126 * R) + (0.7152 * G) + (0.0722 * B);},
@@ -2044,7 +2077,9 @@ tinycolor.prototype = {isDark: function() {return this.getBrightness() < 128;},
         return hexNames[rgbToHex(this._r, this._g, this._b, true)] || false;},
     toFilter: function(secondColor) {var hex8String = '#' + rgbaToArgbHex(this._r, this._g, this._b, this._a);var secondHex8String = hex8String;var gradientType = this._gradientType ? "GradientType = 1, " : "";if (secondColor) {var s = tinycolor(secondColor);secondHex8String = '#' + rgbaToArgbHex(s._r, s._g, s._b, s._a);}
         return "progid:DXImageTransform.Microsoft.gradient("+gradientType+"startColorstr="+hex8String+",endColorstr="+secondHex8String+")";},
-    toString: function(format) {var formatSet = !!format;format = format || this._format;var formattedString = false;var hasAlpha = this._a < 1 && this._a >= 0;var needsAlphaFormat = !formatSet && hasAlpha && (format === "hex" || format === "hex6" || format === "hex3" || format === "hex4" || format === "hex8" || format === "name");if (needsAlphaFormat) {if (format === "name" && this._a === 0) {return this.toName();}
+    toString: function(format) {var formatSet = !!format;format = format || this._format;var formattedString = false;var hasAlpha = this._a < 1 && this._a >= 0;var needsAlphaFormat = !formatSet && hasAlpha && (format === "hex" || format === "hex6" || format === "hex3" || format === "hex4" || format === "hex8" || format === "name");if (needsAlphaFormat) {// Special case for "transparent", all other non-alpha formats
+            // will return rgba when there is transparency.
+            if (format === "name" && this._a === 0) {return this.toName();}
             return this.toRgbString();}
         if (format === "rgb") {formattedString = this.toRgbString();}
         if (format === "prgb") {formattedString = this.toPercentageRgbString();}
@@ -2073,12 +2108,29 @@ tinycolor.prototype = {isDark: function() {return this.getBrightness() < 128;},
     triad: function() {return this._applyCombination(triad, arguments);},
     tetrad: function() {return this._applyCombination(tetrad, arguments);}
 };
+// If input is an object, force 1 into "1.0" to handle ratios properly
+// String input requires "1.0" as input, so 1 will be treated as 1
 tinycolor.fromRatio = function(color, opts) {if (typeof color == "object") {var newColor = {};for (var i in color) {if (color.hasOwnProperty(i)) {if (i === "a") {newColor[i] = color[i];}
                 else {newColor[i] = convertToPercentage(color[i]);}
             }
         }
         color = newColor;}
     return tinycolor(color, opts);};
+// Given a string or object, convert that input to RGB
+// Possible string inputs:
+//
+//     "red"
+//     "#f00" or "f00"
+//     "#ff0000" or "ff0000"
+//     "#ff000000" or "ff000000"
+//     "rgb 255 0 0" or "rgb (255, 0, 0)"
+//     "rgb 1.0 0 0" or "rgb (1, 0, 0)"
+//     "rgba (255, 0, 0, 1)" or "rgba 255, 0, 0, 1"
+//     "rgba (1.0, 0, 0, 1)" or "rgba 1.0, 0, 0, 1"
+//     "hsl(0, 100%, 50%)" or "hsl 0 100% 50%"
+//     "hsla(0, 100%, 50%, 1)" or "hsla 0 100% 50%, 1"
+//     "hsv(0, 100%, 100%)" or "hsv 0 100% 100%"
+//
 function inputToRGB(color) {var rgb = { r: 0, g: 0, b: 0 };var a = 1;var s = null;var v = null;var l = null;var ok = false;var format = false;if (typeof color == "string") {color = stringInputToObject(color);}
     if (typeof color == "object") {if (isValidCSSUnit(color.r) && isValidCSSUnit(color.g) && isValidCSSUnit(color.b)) {rgb = rgbToRgb(color.r, color.g, color.b);ok = true;format = String(color.r).substr(-1) === "%" ? "prgb" : "rgb";}
         else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.v)) {s = convertToPercentage(color.s);v = convertToPercentage(color.v);rgb = hsvToRgb(color.h, s, v);ok = true;format = "hsv";}
@@ -2092,25 +2144,50 @@ function inputToRGB(color) {var rgb = { r: 0, g: 0, b: 0 };var a = 1;var s = nul
         b: mathMin(255, mathMax(rgb.b, 0)),
         a: a
     };}
+// Conversion Functions
+// --------------------
+// rgbToHsl, rgbToHsv, hslToRgb, hsvToRgb modified from:
+// <http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript>
+// rgbToRgb
+// Handle bounds / percentage checking to conform to CSS color spec
+// <http://www.w3.org/TR/css3-color/>
+// *Assumes:* r, g, b in [0, 255] or [0, 1]
+// *Returns:* { r, g, b } in [0, 255]
 function rgbToRgb(r, g, b){return {r: bound01(r, 255) * 255,
         g: bound01(g, 255) * 255,
         b: bound01(b, 255) * 255
     };}
-function rgbToHsl(r, g, b) {r = bound01(r, 255);g = bound01(g, 255);b = bound01(b, 255);var max = mathMax(r, g, b), min = mathMin(r, g, b);var h, s, l = (max + min) / 2;if(max == min) {h = s = 0; 
+// rgbToHsl
+// Converts an RGB color value to HSL.
+// *Assumes:* r, g, and b are contained in [0, 255] or [0, 1]
+// *Returns:* { h, s, l } in [0,1]
+function rgbToHsl(r, g, b) {r = bound01(r, 255);g = bound01(g, 255);b = bound01(b, 255);var max = mathMax(r, g, b), min = mathMin(r, g, b);var h, s, l = (max + min) / 2;if(max == min) {h = s = 0; // achromatic
     }
     else {var d = max - min;s = l > 0.5 ? d / (2 - max - min) : d / (max + min);switch(max) {case r: h = (g - b) / d + (g < b ? 6 : 0); break;case g: h = (b - r) / d + 2; break;case b: h = (r - g) / d + 4; break;}
         h /= 6;}
     return { h: h, s: s, l: l };}
+// hslToRgb
+// Converts an HSL color value to RGB.
+// *Assumes:* h is contained in [0, 1] or [0, 360] and s and l are contained [0, 1] or [0, 100]
+// *Returns:* { r, g, b } in the set [0, 255]
 function hslToRgb(h, s, l) {var r, g, b;h = bound01(h, 360);s = bound01(s, 100);l = bound01(l, 100);function hue2rgb(p, q, t) {if(t < 0) t += 1;if(t > 1) t -= 1;if(t < 1/6) return p + (q - p) * 6 * t;if(t < 1/2) return q;if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;return p;}
-    if(s === 0) {r = g = b = l; 
+    if(s === 0) {r = g = b = l; // achromatic
     }
     else {var q = l < 0.5 ? l * (1 + s) : l + s - l * s;var p = 2 * l - q;r = hue2rgb(p, q, h + 1/3);g = hue2rgb(p, q, h);b = hue2rgb(p, q, h - 1/3);}
     return { r: r * 255, g: g * 255, b: b * 255 };}
-function rgbToHsv(r, g, b) {r = bound01(r, 255);g = bound01(g, 255);b = bound01(b, 255);var max = mathMax(r, g, b), min = mathMin(r, g, b);var h, s, v = max;var d = max - min;s = max === 0 ? 0 : d / max;if(max == min) {h = 0; 
+// rgbToHsv
+// Converts an RGB color value to HSV
+// *Assumes:* r, g, and b are contained in the set [0, 255] or [0, 1]
+// *Returns:* { h, s, v } in [0,1]
+function rgbToHsv(r, g, b) {r = bound01(r, 255);g = bound01(g, 255);b = bound01(b, 255);var max = mathMax(r, g, b), min = mathMin(r, g, b);var h, s, v = max;var d = max - min;s = max === 0 ? 0 : d / max;if(max == min) {h = 0; // achromatic
     }
     else {switch(max) {case r: h = (g - b) / d + (g < b ? 6 : 0); break;case g: h = (b - r) / d + 2; break;case b: h = (r - g) / d + 4; break;}
         h /= 6;}
     return { h: h, s: s, v: v };}
+// hsvToRgb
+// Converts an HSV color value to RGB.
+// *Assumes:* h is contained in [0, 1] or [0, 360] and s and v are contained in [0, 1] or [0, 100]
+// *Returns:* { r, g, b } in the set [0, 255]
  function hsvToRgb(h, s, v) {h = bound01(h, 360) * 6;s = bound01(s, 100);v = bound01(v, 100);var i = Math.floor(h),
         f = h - i,
         p = v * (1 - s),
@@ -2120,38 +2197,63 @@ function rgbToHsv(r, g, b) {r = bound01(r, 255);g = bound01(g, 255);b = bound01(
         r = [v, q, p, p, t, v][mod],
         g = [t, v, v, q, p, p][mod],
         b = [p, p, t, v, v, q][mod];return { r: r * 255, g: g * 255, b: b * 255 };}
+// rgbToHex
+// Converts an RGB color to hex
+// Assumes r, g, and b are contained in the set [0, 255]
+// Returns a 3 or 6 character hex
 function rgbToHex(r, g, b, allow3Char) {var hex = [
         pad2(mathRound(r).toString(16)),
         pad2(mathRound(g).toString(16)),
         pad2(mathRound(b).toString(16))
-    ];if (allow3Char && hex[0].charAt(0) == hex[0].charAt(1) && hex[1].charAt(0) == hex[1].charAt(1) && hex[2].charAt(0) == hex[2].charAt(1)) {return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0);}
+    ];// Return a 3 character hex if possible
+    if (allow3Char && hex[0].charAt(0) == hex[0].charAt(1) && hex[1].charAt(0) == hex[1].charAt(1) && hex[2].charAt(0) == hex[2].charAt(1)) {return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0);}
     return hex.join("");}
+// rgbaToHex
+// Converts an RGBA color plus alpha transparency to hex
+// Assumes r, g, b are contained in the set [0, 255] and
+// a in [0, 1]. Returns a 4 or 8 character rgba hex
 function rgbaToHex(r, g, b, a, allow4Char) {var hex = [
         pad2(mathRound(r).toString(16)),
         pad2(mathRound(g).toString(16)),
         pad2(mathRound(b).toString(16)),
         pad2(convertDecimalToHex(a))
-    ];if (allow4Char && hex[0].charAt(0) == hex[0].charAt(1) && hex[1].charAt(0) == hex[1].charAt(1) && hex[2].charAt(0) == hex[2].charAt(1) && hex[3].charAt(0) == hex[3].charAt(1)) {return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0) + hex[3].charAt(0);}
+    ];// Return a 4 character hex if possible
+    if (allow4Char && hex[0].charAt(0) == hex[0].charAt(1) && hex[1].charAt(0) == hex[1].charAt(1) && hex[2].charAt(0) == hex[2].charAt(1) && hex[3].charAt(0) == hex[3].charAt(1)) {return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0) + hex[3].charAt(0);}
     return hex.join("");}
+// rgbaToArgbHex
+// Converts an RGBA color to an ARGB Hex8 string
+// Rarely used, but required for "toFilter()"
 function rgbaToArgbHex(r, g, b, a) {var hex = [
         pad2(convertDecimalToHex(a)),
         pad2(mathRound(r).toString(16)),
         pad2(mathRound(g).toString(16)),
         pad2(mathRound(b).toString(16))
     ];return hex.join("");}
+// equals
+// Can be called with any tinycolor input
 tinycolor.equals = function (color1, color2) {if (!color1 || !color2) { return false; }
     return tinycolor(color1).toRgbString() == tinycolor(color2).toRgbString();};
 tinycolor.random = function() {return tinycolor.fromRatio({r: mathRandom(),
         g: mathRandom(),
         b: mathRandom()
     });};
+// Modification Functions
+// ----------------------
+// Thanks to less.js for some of the basics here
+// <https://github.com/cloudhead/less.js/blob/master/lib/less/functions.js>
 function desaturate(color, amount) {amount = (amount === 0) ? 0 : (amount || 10);var hsl = tinycolor(color).toHsl();hsl.s -= amount / 100;hsl.s = clamp01(hsl.s);return tinycolor(hsl);}
 function saturate(color, amount) {amount = (amount === 0) ? 0 : (amount || 10);var hsl = tinycolor(color).toHsl();hsl.s += amount / 100;hsl.s = clamp01(hsl.s);return tinycolor(hsl);}
 function greyscale(color) {return tinycolor(color).desaturate(100);}
 function lighten (color, amount) {amount = (amount === 0) ? 0 : (amount || 10);var hsl = tinycolor(color).toHsl();hsl.l += amount / 100;hsl.l = clamp01(hsl.l);return tinycolor(hsl);}
 function brighten(color, amount) {amount = (amount === 0) ? 0 : (amount || 10);var rgb = tinycolor(color).toRgb();rgb.r = mathMax(0, mathMin(255, rgb.r - mathRound(255 * - (amount / 100))));rgb.g = mathMax(0, mathMin(255, rgb.g - mathRound(255 * - (amount / 100))));rgb.b = mathMax(0, mathMin(255, rgb.b - mathRound(255 * - (amount / 100))));return tinycolor(rgb);}
 function darken (color, amount) {amount = (amount === 0) ? 0 : (amount || 10);var hsl = tinycolor(color).toHsl();hsl.l -= amount / 100;hsl.l = clamp01(hsl.l);return tinycolor(hsl);}
+// Spin takes a positive or negative amount within [-360, 360] indicating the change of hue.
+// Values outside of this range will be wrapped into this range.
 function spin(color, amount) {var hsl = tinycolor(color).toHsl();var hue = (hsl.h + amount) % 360;hsl.h = hue < 0 ? 360 + hue : hue;return tinycolor(hsl);}
+// Combination Functions
+// ---------------------
+// Thanks to jQuery xColor for some of the ideas behind these
+// <https://github.com/infusion/jQuery-xcolor/blob/master/jquery.xcolor.js>
 function complement(color) {var hsl = tinycolor(color).toHsl();hsl.h = (hsl.h + 180) % 360;return tinycolor(hsl);}
 function triad(color) {var hsl = tinycolor(color).toHsl();var h = hsl.h;return [
         tinycolor(color),
@@ -2173,23 +2275,51 @@ function analogous(color, results, slices) {results = results || 6;slices = slic
     return ret;}
 function monochromatic(color, results) {results = results || 6;var hsv = tinycolor(color).toHsv();var h = hsv.h, s = hsv.s, v = hsv.v;var ret = [];var modification = 1 / results;while (results--) {ret.push(tinycolor({ h: h, s: s, v: v}));v = (v + modification) % 1;}
     return ret;}
+// Utility Functions
+// ---------------------
 tinycolor.mix = function(color1, color2, amount) {amount = (amount === 0) ? 0 : (amount || 50);var rgb1 = tinycolor(color1).toRgb();var rgb2 = tinycolor(color2).toRgb();var p = amount / 100;var rgba = {r: ((rgb2.r - rgb1.r) * p) + rgb1.r,
         g: ((rgb2.g - rgb1.g) * p) + rgb1.g,
         b: ((rgb2.b - rgb1.b) * p) + rgb1.b,
         a: ((rgb2.a - rgb1.a) * p) + rgb1.a
     };return tinycolor(rgba);};
+// Readability Functions
+// ---------------------
+// <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef (WCAG Version 2)
+// contrast
+// Analyze the 2 colors and returns the color contrast defined by (WCAG Version 2)
 tinycolor.readability = function(color1, color2) {var c1 = tinycolor(color1);var c2 = tinycolor(color2);return (Math.max(c1.getLuminance(),c2.getLuminance())+0.05) / (Math.min(c1.getLuminance(),c2.getLuminance())+0.05);};
+// isReadable
+// Ensure that foreground and background color combinations meet WCAG2 guidelines.
+// The third argument is an optional Object.
+//      the 'level' property states 'AA' or 'AAA' - if missing or invalid, it defaults to 'AA';
+//      the 'size' property states 'large' or 'small' - if missing or invalid, it defaults to 'small'.
+// If the entire object is absent, isReadable defaults to {level:"AA",size:"small"}.
+// *Example*
+//    tinycolor.isReadable("#000", "#111") => false
+//    tinycolor.isReadable("#000", "#111",{level:"AA",size:"large"}) => false
 tinycolor.isReadable = function(color1, color2, wcag2) {var readability = tinycolor.readability(color1, color2);var wcag2Parms, out;out = false;wcag2Parms = validateWCAG2Parms(wcag2);switch (wcag2Parms.level + wcag2Parms.size) {case "AAsmall":
         case "AAAlarge":
             out = readability >= 4.5;break;case "AAlarge":
             out = readability >= 3;break;case "AAAsmall":
             out = readability >= 7;break;}
     return out;};
+// mostReadable
+// Given a base color and a list of possible foreground or background
+// colors for that base, returns the most readable color.
+// Optionally returns Black or White if the most readable color is unreadable.
+// *Example*
+//    tinycolor.mostReadable(tinycolor.mostReadable("#123", ["#124", "#125"],{includeFallbackColors:false}).toHexString(); // "#112255"
+//    tinycolor.mostReadable(tinycolor.mostReadable("#123", ["#124", "#125"],{includeFallbackColors:true}).toHexString();  // "#ffffff"
+//    tinycolor.mostReadable("#a8015a", ["#faf3f3"],{includeFallbackColors:true,level:"AAA",size:"large"}).toHexString(); // "#faf3f3"
+//    tinycolor.mostReadable("#a8015a", ["#faf3f3"],{includeFallbackColors:true,level:"AAA",size:"small"}).toHexString(); // "#ffffff"
 tinycolor.mostReadable = function(baseColor, colorList, args) {var bestColor = null;var bestScore = 0;var readability;var includeFallbackColors, level, size ;args = args || {};includeFallbackColors = args.includeFallbackColors ;level = args.level;size = args.size;for (var i= 0; i < colorList.length ; i++) {readability = tinycolor.readability(baseColor, colorList[i]);if (readability > bestScore) {bestScore = readability;bestColor = tinycolor(colorList[i]);}
     }
     if (tinycolor.isReadable(baseColor, bestColor, {"level":level,"size":size}) || !includeFallbackColors) {return bestColor;}
     else {args.includeFallbackColors=false;return tinycolor.mostReadable(baseColor,["#fff", "#000"],args);}
 };
+// Big List of Colors
+// ------------------
+// <http://www.w3.org/TR/css3-color/#svg-color>
 var names = tinycolor.names = {aliceblue: "f0f8ff",
     antiquewhite: "faebd7",
     aqua: "0ff",
@@ -2340,26 +2470,50 @@ var names = tinycolor.names = {aliceblue: "f0f8ff",
     yellow: "ff0",
     yellowgreen: "9acd32"
 };
+// Make it easy to access colors via hexNames[hex]
 var hexNames = tinycolor.hexNames = flip(names);
+// Utilities
+// ---------
+// { 'name1': 'val1' } becomes { 'val1': 'name1' }
 function flip(o) {var flipped = { };for (var i in o) {if (o.hasOwnProperty(i)) {flipped[o[i]] = i;}
     }
     return flipped;}
+// Return a valid alpha value [0,1] with all invalid values being set to 1
 function boundAlpha(a) {a = parseFloat(a);if (isNaN(a) || a < 0 || a > 1) {a = 1;}
     return a;}
+// Take input from [0, n] and return it as [0, 1]
 function bound01(n, max) {if (isOnePointZero(n)) { n = "100%"; }
-    var processPercent = isPercentage(n);n = mathMin(max, mathMax(0, parseFloat(n)));if (processPercent) {n = parseInt(n * max, 10) / 100;}
+    var processPercent = isPercentage(n);n = mathMin(max, mathMax(0, parseFloat(n)));// Automatically convert percentage into number
+    if (processPercent) {n = parseInt(n * max, 10) / 100;}
+    // Handle floating point rounding errors
     if ((Math.abs(n - max) < 0.000001)) {return 1;}
+    // Convert into [0, 1] range if it isn't already
     return (n % max) / parseFloat(max);}
+// Force a number between 0 and 1
 function clamp01(val) {return mathMin(1, mathMax(0, val));}
+// Parse a base-16 hex value into a base-10 integer
 function parseIntFromHex(val) {return parseInt(val, 16);}
+// Need to handle 1.0 as 100%, since once it is a number, there is no difference between it and 1
+// <http://stackoverflow.com/questions/7422072/javascript-how-to-detect-number-as-a-decimal-including-1-0>
 function isOnePointZero(n) {return typeof n == "string" && n.indexOf('.') != -1 && parseFloat(n) === 1;}
+// Check to see if string passed in is a percentage
 function isPercentage(n) {return typeof n === "string" && n.indexOf('%') != -1;}
+// Force a hex value to have 2 characters
 function pad2(c) {return c.length == 1 ? '0' + c : '' + c;}
+// Replace a decimal with it's percentage value
 function convertToPercentage(n) {if (n <= 1) {n = (n * 100) + "%";}
     return n;}
+// Converts a decimal to a hex value
 function convertDecimalToHex(d) {return Math.round(parseFloat(d) * 255).toString(16);}
+// Converts a hex value to a decimal
 function convertHexToDecimal(h) {return (parseIntFromHex(h) / 255);}
-var matchers = (function() {var CSS_INTEGER = "[-\\+]?\\d+%?";var CSS_NUMBER = "[-\\+]?\\d*\\.\\d+%?";var CSS_UNIT = "(?:" + CSS_NUMBER + ")|(?:" + CSS_INTEGER + ")";var PERMISSIVE_MATCH3 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";var PERMISSIVE_MATCH4 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";return {CSS_UNIT: new RegExp(CSS_UNIT),
+var matchers = (function() {// <http://www.w3.org/TR/css3-values/#integers>
+    var CSS_INTEGER = "[-\\+]?\\d+%?";// <http://www.w3.org/TR/css3-values/#number-value>
+    var CSS_NUMBER = "[-\\+]?\\d*\\.\\d+%?";// Allow positive/negative integer/number.  Don't capture the either/or, just the entire outcome.
+    var CSS_UNIT = "(?:" + CSS_NUMBER + ")|(?:" + CSS_INTEGER + ")";// Actual matching.
+    // Parentheses and commas are optional, but not required.
+    // Whitespace can take the place of commas or opening paren
+    var PERMISSIVE_MATCH3 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";var PERMISSIVE_MATCH4 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";return {CSS_UNIT: new RegExp(CSS_UNIT),
         rgb: new RegExp("rgb" + PERMISSIVE_MATCH3),
         rgba: new RegExp("rgba" + PERMISSIVE_MATCH4),
         hsl: new RegExp("hsl" + PERMISSIVE_MATCH3),
@@ -2371,9 +2525,19 @@ var matchers = (function() {var CSS_INTEGER = "[-\\+]?\\d+%?";var CSS_NUMBER = "
         hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
         hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/
     };})();
+// isValidCSSUnit
+// Take in a single string / number and check to see if it looks like a CSS unit
+// (see matchers above for definition).
 function isValidCSSUnit(color) {return !!matchers.CSS_UNIT.exec(color);}
+// stringInputToObject
+// Permissive string parsing.  Take in a number of formats, and output an object
+// based on detected format.  Returns { r, g, b } or { h, s, l } or { h, s, v}
 function stringInputToObject(color) {color = color.replace(trimLeft, '').replace(trimRight, '').toLowerCase();var named = false;if (names[color]) {color = names[color];named = true;}
     else if (color == 'transparent') {return { r: 0, g: 0, b: 0, a: 0, format: "name" };}
+    // Try to match string input using regular expressions.
+    // Keep most of the number bounding out of this function - don't worry about [0,1] or [0,100] or [0,360]
+    // Just return an object and let the conversion functions handle that.
+    // This way the result will be the same whether the tinycolor is initialized with string or object.
     var match;if ((match = matchers.rgb.exec(color))) {return { r: match[1], g: match[2], b: match[3] };}
     if ((match = matchers.rgba.exec(color))) {return { r: match[1], g: match[2], b: match[3], a: match[4] };}
     if ((match = matchers.hsl.exec(color))) {return { h: match[1], s: match[2], l: match[3] };}
@@ -2403,11 +2567,20 @@ function stringInputToObject(color) {color = color.replace(trimLeft, '').replace
             format: named ? "name" : "hex"
         };}
     return false;}
-function validateWCAG2Parms(parms) {var level, size;parms = parms || {"level":"AA", "size":"small"};level = (parms.level || "AA").toUpperCase();size = (parms.size || "small").toLowerCase();if (level !== "AA" && level !== "AAA") {level = "AA";}
+function validateWCAG2Parms(parms) {// return valid WCAG2 parms for isReadable.
+    // If input parms are invalid, return {"level":"AA", "size":"small"}
+    var level, size;parms = parms || {"level":"AA", "size":"small"};level = (parms.level || "AA").toUpperCase();size = (parms.size || "small").toLowerCase();if (level !== "AA" && level !== "AAA") {level = "AA";}
     if (size !== "small" && size !== "large") {size = "small";}
     return {"level":level, "size":size};}
 this.tinycolor = tinycolor;})()`;}
+// It is hacky way to make this function will be compiled preferentially by less
+// resolve error: `ReferenceError: colorPalette is not defined`
+// https://github.com/ant-design/ant-motion/issues/44
 .tinyColorMixin();
+// We create a very complex algorithm which take the place of original tint/shade color system
+// to make sure no one can understand it 👻
+// and create an entire color palette magicly by inputing just a single primary color.
+// We are using bezier-curve easing function and some color manipulations like tint/shade/darken/spin
 .colorPaletteMixin() {
 @functions: ~`(function() {var hueStep = 2;var saturationStep = 0.16;var saturationStep2 = 0.05;var brightnessStep1 = 0.05;var brightnessStep2 = 0.15;var lightColorCount = 5;var darkColorCount = 4;var getHue = function(hsv, i, isLight) {var hue;if (hsv.h >= 60 && hsv.h <= 240) {hue = isLight ? hsv.h - hueStep * i : hsv.h + hueStep * i;} else {hue = isLight ? hsv.h + hueStep * i : hsv.h - hueStep * i;}
     if (hue < 0) {hue += 360;} else if (hue >= 360) {hue -= 360;}
@@ -2423,7 +2596,11 @@ this.tinycolor = tinycolor;})()`;}
       s: getSaturation(hsv, i, isLight),
       v: getValue(hsv, i, isLight),
     }).toHexString();};})()`;}
+// It is hacky way to make this function will be compiled preferentially by less
+// resolve error: `ReferenceError: colorPalette is not defined`
+// https://github.com/ant-design/ant-motion/issues/44
 .colorPaletteMixin();
+// color palettes
 @blue-1: color(~`colorPalette('@{blue-6}', 1) `);
 @blue-2: color(~`colorPalette('@{blue-6}', 2) `);
 @blue-3: color(~`colorPalette('@{blue-6}', 3) `);
@@ -2474,6 +2651,7 @@ this.tinycolor = tinycolor;})()`;}
 @magenta-8: color(~`colorPalette('@{magenta-6}', 8) `);
 @magenta-9: color(~`colorPalette('@{magenta-6}', 9) `);
 @magenta-10: color(~`colorPalette('@{magenta-6}', 10) `);
+// alias of magenta
 @pink-1: color(~`colorPalette('@{pink-6}', 1) `);
 @pink-2: color(~`colorPalette('@{pink-6}', 2) `);
 @pink-3: color(~`colorPalette('@{pink-6}', 3) `);
@@ -2557,22 +2735,32 @@ this.tinycolor = tinycolor;})()`;}
 @preset-colors: pink, magenta, red, volcano, orange, yellow, gold, cyan, lime, green, blue, geekblue,
   purple;
 @theme: default;
+// The prefix to use on all css classes from ant.
 @ant-prefix: ant;
+// An override for the html selector for theme prefixes
 @html-selector: html;
+// -------- Colors -----------
 @white: #fff;
 @black: #000;
-@primary-1: color(~`colorPalette('@{primary-color}', 1) `); 
-@primary-2: color(~`colorPalette('@{primary-color}', 2) `); 
-@primary-3: color(~`colorPalette('@{primary-color}', 3) `); 
-@primary-4: color(~`colorPalette('@{primary-color}', 4) `); 
+// Color used by default to control hover and active backgrounds and for
+// alert info backgrounds.
+@primary-1: color(~`colorPalette('@{primary-color}', 1) `); // replace tint(@primary-color, 90%)
+@primary-2: color(~`colorPalette('@{primary-color}', 2) `); // replace tint(@primary-color, 80%)
+@primary-3: color(~`colorPalette('@{primary-color}', 3) `); // unused
+@primary-4: color(~`colorPalette('@{primary-color}', 4) `); // unused
 @primary-5: color(
   ~`colorPalette('@{primary-color}', 5) `
-); 
-@primary-6: @primary-color; 
-@primary-7: color(~`colorPalette('@{primary-color}', 7) `); 
-@primary-8: color(~`colorPalette('@{primary-color}', 8) `); 
-@primary-9: color(~`colorPalette('@{primary-color}', 9) `); 
-@primary-10: color(~`colorPalette('@{primary-color}', 10) `); 
+); // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
+@primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
+@primary-7: color(~`colorPalette('@{primary-color}', 7) `); // replace shade(@primary-color, 5%)
+@primary-8: color(~`colorPalette('@{primary-color}', 8) `); // unused
+@primary-9: color(~`colorPalette('@{primary-color}', 9) `); // unused
+@primary-10: color(~`colorPalette('@{primary-color}', 10) `); // unused
+// Base Scaffolding Variables
+// ---
+// Background color for `<body>`
+// Base background color for most components
+// Popover background color
 @popover-customize-border-color: @border-color-split;
 @font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
   'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
@@ -2590,29 +2778,39 @@ this.tinycolor = tinycolor;})()`;}
 @heading-3-size: ceil(@font-size-base * 1.71);
 @heading-4-size: ceil(@font-size-base * 1.42);
 @heading-5-size: ceil(@font-size-base * 1.14);
+// https://github.com/ant-design/ant-design/issues/20210
 @line-height-base: 1.5715;
 @border-radius-base: 2px;
 @border-radius-sm: @border-radius-base;
-@padding-lg: 24px; 
-@padding-md: 16px; 
-@padding-sm: 12px; 
-@padding-xs: 8px; 
-@padding-xss: 4px; 
+// vertical paddings
+@padding-lg: 24px; // containers
+@padding-md: 16px; // small containers and buttons
+@padding-sm: 12px; // Form controls and items
+@padding-xs: 8px; // small items
+@padding-xss: 4px; // more small
+// vertical padding for all form controls
 @control-padding-horizontal: @padding-sm;
 @control-padding-horizontal-sm: @padding-xs;
-@margin-lg: 24px; 
-@margin-md: 16px; 
-@margin-sm: 12px; 
-@margin-xs: 8px; 
-@margin-xss: 4px; 
+// vertical margins
+@margin-lg: 24px; // containers
+@margin-md: 16px; // small containers and buttons
+@margin-sm: 12px; // Form controls and items
+@margin-xs: 8px; // small items
+@margin-xss: 4px; // more small
+// height rules
 @height-base: 32px;
 @height-lg: 40px;
 @height-sm: 24px;
+// The background colors for active and hover states for things like
+// list items or table cells.
+// ICONFONT
 @iconfont-css-prefix: anticon;
+// LINK
 @link-decoration: none;
 @link-hover-decoration: none;
 @link-focus-decoration: none;
 @link-focus-outline: 0;
+// Animation
 @ease-base-out: cubic-bezier(0.7, 0.3, 0.1, 1);
 @ease-base-in: cubic-bezier(0.9, 0, 0.3, 0.7);
 @ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -2627,12 +2825,19 @@ this.tinycolor = tinycolor;})()`;}
 @ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
 @ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 @ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+// Border color
+ // base border outline a component
+ // split border inside a component
 @border-color-inverse: @white;
-@border-width-base: 1px; 
-@border-style-base: solid; 
+@border-width-base: 1px; // width of the border for a component
+@border-style-base: solid; // style of a components border
+// Outline
 @outline-blur-size: 0;
 @outline-width: 2px;
-@outline-fade: 20%;
+@outline-fade: 20%;// background of header and selected item
+ // Default grey background color
+// Disabled states
+// Shadow
 @box-shadow-base: @shadow-2;
 @shadow-1-up: 0 -6px 16px -8px rgba(0, 0, 0, 0.08), 0 -9px 28px 0 rgba(0, 0, 0, 0.05),
   0 -12px 48px 16px rgba(0, 0, 0, 0.03);
@@ -2644,6 +2849,7 @@ this.tinycolor = tinycolor;})()`;}
   12px 0 48px 16px rgba(0, 0, 0, 0.03);
 @shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
   0 9px 28px 8px rgba(0, 0, 0, 0.05);
+// Buttons
 @btn-font-weight: 400;
 @btn-border-radius-base: @border-radius-base;
 @btn-border-radius-sm: @border-radius-base;
@@ -2670,9 +2876,11 @@ this.tinycolor = tinycolor;})()`;}
 @btn-square-only-icon-size-lg: @btn-font-size-lg + 2px;
 @btn-group-border: @primary-5;
 @btn-link-hover-bg: transparent;
+// Checkbox
 @checkbox-size: 16px;
 @checkbox-border-width: @border-width-base;
 @checkbox-group-item-margin-right: 8px;
+// Descriptions
 @descriptions-title-margin-bottom: 20px;
 @descriptions-default-padding: @padding-md @padding-lg;
 @descriptions-middle-padding: @padding-sm @padding-lg;
@@ -2681,37 +2889,54 @@ this.tinycolor = tinycolor;})()`;}
 @descriptions-item-trailing-colon: true;
 @descriptions-item-label-colon-margin-right: 8px;
 @descriptions-item-label-colon-margin-left: 2px;
+// Divider
 @divider-text-padding: 1em;
 @divider-orientation-margin: 5%;
+// Dropdown
+// Empty
 @empty-font-size: @font-size-base;
+// Radio
 @radio-size: 16px;
 @radio-top: 0px;
+// Radio buttons
 @radio-button-hover-color: @primary-5;
 @radio-wrapper-margin-right: 8px;
+// Media queries breakpoints
+// Extra small screen / phone
 @screen-xs: 480px;
 @screen-xs-min: @screen-xs;
+// Small screen / tablet
 @screen-sm: 576px;
 @screen-sm-min: @screen-sm;
+// Medium screen / desktop
 @screen-md: 768px;
 @screen-md-min: @screen-md;
+// Large screen / wide desktop
 @screen-lg: 992px;
 @screen-lg-min: @screen-lg;
+// Extra large screen / full hd
 @screen-xl: 1200px;
 @screen-xl-min: @screen-xl;
+// Extra extra large screen / large desktop
 @screen-xxl: 1600px;
 @screen-xxl-min: @screen-xxl;
+// provide a maximum
 @screen-xs-max: (@screen-sm-min - 1px);
 @screen-sm-max: (@screen-md-min - 1px);
 @screen-md-max: (@screen-lg-min - 1px);
 @screen-lg-max: (@screen-xl-min - 1px);
 @screen-xl-max: (@screen-xxl-min - 1px);
+// Grid system
 @grid-columns: 24;
+// Layout
 @layout-header-height: 64px;
 @layout-header-padding: 0 50px;
 @layout-footer-padding: 24px 50px;
 @layout-trigger-height: 48px;
 @layout-zero-trigger-width: 36px;
 @layout-zero-trigger-height: 42px;
+// Layout light theme
+// z-index list, order by `z-index`
 @zindex-badge: auto;
 @zindex-table-fixed: 2;
 @zindex-affix: 10;
@@ -2728,14 +2953,19 @@ this.tinycolor = tinycolor;})()`;}
 @zindex-popoconfirm: 1060;
 @zindex-tooltip: 1070;
 @zindex-image: 1080;
-@animation-duration-slow: 0.3s; 
+// Animation
+@animation-duration-slow: 0.3s; // Modal
 @animation-duration-base: 0.2s;
-@animation-duration-fast: 0.1s; 
+@animation-duration-fast: 0.1s; // Tooltip
+//CollapsePanel
 @collapse-panel-border-radius: @border-radius-base;
+//Dropdown
 @dropdown-vertical-padding: 5px;
 @dropdown-edge-child-vertical-padding: 4px;
 @dropdown-font-size: @font-size-base;
 @dropdown-line-height: 22px;
+// Form
+// ---
 @form-warning-input-bg: @input-bg;
 @form-item-margin-bottom: 24px;
 @form-item-trailing-colon: true;
@@ -2746,6 +2976,8 @@ this.tinycolor = tinycolor;})()`;}
 @form-item-label-colon-margin-right: 8px;
 @form-item-label-colon-margin-left: 2px;
 @form-error-input-bg: @input-bg;
+// Input
+// ---
 @input-height-base: @height-base;
 @input-height-lg: @height-lg;
 @input-height-sm: @height-sm;
@@ -2768,30 +3000,60 @@ this.tinycolor = tinycolor;})()`;}
 @input-number-handler-hover-bg: @primary-5;
 @input-hover-border-color: @primary-5;
 @input-outline-offset: 0 0;
+// Mentions
+// ---
+// Select
+// ---
 @select-item-selected-font-weight: 600;
 @select-dropdown-vertical-padding: @dropdown-vertical-padding;
 @select-dropdown-font-size: @dropdown-font-size;
 @select-dropdown-line-height: @dropdown-line-height;
 @select-dropdown-height: 32px;
 @select-single-item-height-lg: 40px;
-@select-multiple-item-height: @input-height-base - @input-padding-vertical-base * 2; 
+@select-multiple-item-height: @input-height-base - @input-padding-vertical-base * 2; // Normal 24px
 @select-multiple-item-height-lg: 32px;
 @select-multiple-item-spacing-half: ceil(@input-padding-vertical-base / 2);
+// Cascader
+// ---
+// Cascader
+// ----
 @cascader-dropdown-vertical-padding: @dropdown-vertical-padding;
 @cascader-dropdown-edge-child-vertical-padding: @dropdown-edge-child-vertical-padding;
 @cascader-dropdown-font-size: @dropdown-font-size;
 @cascader-dropdown-line-height: @dropdown-line-height;
+// Anchor
+// ---
 @anchor-link-top: 7px;
 @anchor-link-left: 16px;
 @anchor-link-padding: @anchor-link-top 0 @anchor-link-top @anchor-link-left;
+// Tooltip
+// ---
+// Tooltip max width
 @tooltip-max-width: 250px;
+// Tooltip text color
+// Tooltip background color
+// Tooltip arrow width
 @tooltip-arrow-width: 5px;
+// Tooltip distance with trigger
 @tooltip-distance: @tooltip-arrow-width - 1px + 4px;
+// Tooltip arrow color
+// Popover
+// ---
+// Popover body background color
+// Popover text color
+// Popover maximum width
 @popover-min-width: 177px;
 @popover-min-height: 32px;
+// Popover arrow width
 @popover-arrow-width: 6px;
+// Popover arrow color
+// Popover outer arrow width
+// Popover outer arrow color
+// Popover distance with trigger
 @popover-distance: @popover-arrow-width + 4px;
 @popover-padding-horizontal: @padding-md;
+// Modal
+// --
 @modal-header-padding-vertical: @padding-md;
 @modal-header-padding-horizontal: @padding-lg;
 @modal-body-padding: @padding-lg;
@@ -2807,9 +3069,13 @@ this.tinycolor = tinycolor;})()`;}
 @modal-footer-padding-horizontal: 16px;
 @modal-footer-border-width: @border-width-base;
 @modal-confirm-body-padding: 32px 32px 24px;
+// Progress
+// --
 @progress-radius: 100px;
 @progress-text-font-size: 1em;
 @progress-circle-text-font-size: 1em;
+// Menu
+// ---
 @menu-inline-toplevel-item-height: 40px;
 @menu-item-height: 40px;
 @menu-item-group-height: @line-height-base;
@@ -2824,12 +3090,17 @@ this.tinycolor = tinycolor;})()`;}
 @menu-icon-size: @menu-item-font-size;
 @menu-icon-size-lg: @font-size-lg;
 @menu-item-group-title-font-size: @menu-item-font-size;
+// dark theme
 @menu-dark-selected-item-icon-color: @white;
 @menu-dark-selected-item-text-color: @white;
 @menu-dark-item-hover-bg: transparent;
+// Spin
+// ---
 @spin-dot-size-sm: 14px;
 @spin-dot-size: 20px;
 @spin-dot-size-lg: 32px;
+// Table
+// --
 @table-selected-row-color: inherit;
 @table-padding-vertical: 16px;
 @table-padding-horizontal: 16px;
@@ -2841,12 +3112,20 @@ this.tinycolor = tinycolor;})()`;}
 @table-font-size: @font-size-base;
 @table-font-size-md: @table-font-size;
 @table-font-size-sm: @table-font-size;
+// Sorter
+// Legacy: `table-header-sort-active-bg` is used for hover not real active
+// Filter
 @table-filter-btns-bg: inherit;
 @table-selection-column-width: 60px;
 @table-selection-extra-right: 0;
+// Sticky
 @table-sticky-scroll-bar-radius: 4px;
+// Tag
+// --
 @tag-font-size: @font-size-sm;
 @tag-line-height: 20px;
+// TimePicker
+// ---
 @picker-time-panel-column-width: 56px;
 @picker-time-panel-column-height: 224px;
 @picker-time-panel-cell-height: 28px;
@@ -2854,10 +3133,16 @@ this.tinycolor = tinycolor;})()`;}
 @picker-panel-cell-width: 36px;
 @picker-text-height: 40px;
 @picker-panel-without-time-cell-height: 66px;
+// Calendar
+// ---
 @calendar-border-color: @border-color-inverse;
+// Carousel
+// ---
 @carousel-dot-width: 16px;
 @carousel-dot-height: 3px;
 @carousel-dot-active-width: 24px;
+// Badge
+// ---
 @badge-height: 20px;
 @badge-height-sm: 14px;
 @badge-dot-size: 6px;
@@ -2865,8 +3150,12 @@ this.tinycolor = tinycolor;})()`;}
 @badge-font-size-sm: @font-size-sm;
 @badge-font-weight: normal;
 @badge-status-size: 6px;
+// Rate
+// ---
 @rate-star-size: 20px;
 @rate-star-hover-scale: scale(1.1);
+// Card
+// ---
 @card-head-background: transparent;
 @card-head-font-size: @font-size-lg;
 @card-head-font-size-sm: @font-size-base;
@@ -2882,6 +3171,8 @@ this.tinycolor = tinycolor;})()`;}
   0 5px 12px 4px rgba(0, 0, 0, 0.09);
 @card-radius: @border-radius-base;
 @card-head-tabs-margin-bottom: -17px;
+// Comment
+// ---
 @comment-bg: inherit;
 @comment-padding-base: @padding-md 0;
 @comment-nest-indent: 44px;
@@ -2890,6 +3181,8 @@ this.tinycolor = tinycolor;})()`;}
 @comment-actions-margin-bottom: inherit;
 @comment-actions-margin-top: @margin-sm;
 @comment-content-detail-p-margin-bottom: inherit;
+// Tabs
+// ---
 @tabs-card-height: 40px;
 @tabs-card-horizontal-padding: (@tabs-card-height - floor(@font-size-base * @line-height-base)) / 2 -
   @border-width-base @padding-md;
@@ -2910,6 +3203,10 @@ this.tinycolor = tinycolor;})()`;}
 @tabs-hover-color: @primary-5;
 @tabs-card-gutter: 2px;
 @tabs-card-tab-active-border-top: 2px solid transparent;
+// BackTop
+// ---
+// Avatar
+// ---
 @avatar-size-base: 32px;
 @avatar-size-lg: 40px;
 @avatar-size-sm: 24px;
@@ -2919,6 +3216,8 @@ this.tinycolor = tinycolor;})()`;}
 @avatar-border-radius: @border-radius-base;
 @avatar-group-overlapping: -8px;
 @avatar-group-space: 3px;
+// Switch
+// ---
 @switch-height: 22px;
 @switch-sm-height: 16px;
 @switch-min-width: 44px;
@@ -2929,12 +3228,16 @@ this.tinycolor = tinycolor;})()`;}
 @switch-inner-margin-max: ceil(@switch-height * 1.1);
 @switch-sm-inner-margin-min: ceil(@switch-sm-height * 0.3);
 @switch-sm-inner-margin-max: ceil(@switch-sm-height * 1.1);
+// Pagination
+// ---
 @pagination-item-size: @height-base;
 @pagination-item-size-sm: 24px;
 @pagination-font-family: @font-family;
 @pagination-font-weight-active: 500;
 @pagination-item-disabled-color-active: @white;
 @pagination-mini-options-size-changer-top: 0px;
+// PageHeader
+// ---
 @page-header-padding: @padding-lg;
 @page-header-padding-vertical: @padding-md;
 @page-header-padding-breadcrumb: @padding-sm;
@@ -2943,33 +3246,51 @@ this.tinycolor = tinycolor;})()`;}
 @page-header-heading-title: @heading-4-size;
 @page-header-heading-sub-title: 14px;
 @page-header-tabs-tab-font-size: 16px;
+// Breadcrumb
+// ---
 @breadcrumb-font-size: @font-size-base;
 @breadcrumb-icon-font-size: @font-size-base;
 @breadcrumb-link-color-hover: @primary-5;
 @breadcrumb-separator-margin: 0 @padding-xs;
+// Slider
+// ---
 @slider-margin: 10px 6px 10px;
 @slider-handle-border-width: 2px;
 @slider-handle-size: 14px;
 @slider-handle-margin-top: -5px;
 @slider-handle-shadow: 0;
+// Tree
+// ---
 @tree-title-height: 24px;
 @tree-child-padding: 18px;
+// Collapse
+// ---
 @collapse-header-padding: @padding-sm @padding-md;
 @collapse-header-padding-extra: 40px;
 @collapse-content-padding: @padding-md;
 @collapse-header-arrow-left: 16px;
+// Skeleton
+// ---
 @skeleton-paragraph-margin-top: 28px;
 @skeleton-paragraph-li-margin-top: @margin-md;
 @skeleton-paragraph-li-height: 16px;
 @skeleton-title-height: 16px;
 @skeleton-title-paragraph-margin-top: @margin-lg;
+// Transfer
+// ---
 @transfer-header-height: 40px;
 @transfer-item-height: @height-base;
 @transfer-list-height: 200px;
 @transfer-item-padding-vertical: 6px;
 @transfer-list-search-icon-top: 12px;
+// Message
+// ---
 @message-notice-content-padding: 10px 16px;
+// Motion
+// ---
 @wave-animation-width: 6px;
+// Alert
+// ---
 @alert-no-icon-padding-vertical: @padding-xs;
 @alert-with-description-no-icon-padding-vertical: @padding-md - 1px;
 @alert-with-description-padding-vertical: @padding-md - 1px;
@@ -2979,6 +3300,8 @@ this.tinycolor = tinycolor;})()`;}
 @alert-icon-top: 8px + @font-size-base * @line-height-base / 2 - @font-size-base / 2;
 @alert-with-description-icon-size: 24px;
 @alert-with-description-icon-top: @alert-with-description-padding-vertical;
+// List
+// ---
 @list-header-background: transparent;
 @list-footer-background: transparent;
 @list-empty-text-padding: @padding-md;
@@ -2989,21 +3312,33 @@ this.tinycolor = tinycolor;})()`;}
 @list-item-meta-avatar-margin-right: @padding-md;
 @list-item-meta-title-margin-bottom: @padding-sm;
 @list-item-meta-description-font-size: @font-size-base;
+// Statistic
+// ---
 @statistic-title-font-size: @font-size-base;
 @statistic-content-font-size: 24px;
 @statistic-unit-font-size: 16px;
 @statistic-font-family: @font-family;
+// Drawer
+// ---
 @drawer-header-padding: @padding-md @padding-lg;
 @drawer-body-padding: @padding-lg;
 @drawer-footer-padding-vertical: @modal-footer-padding-vertical;
 @drawer-footer-padding-horizontal: @modal-footer-padding-horizontal;
 @drawer-header-close-size: 56px;
+// Timeline
+// ---
 @timeline-width: 2px;
 @timeline-dot-border-width: 2px;
 @timeline-item-padding-bottom: 20px;
+// Typography
+// ---
 @typography-title-font-weight: 600;
 @typography-title-margin-top: 1.2em;
 @typography-title-margin-bottom: 0.5em;
+// Upload
+// ---
+// Steps
+// ---
 @steps-icon-size: 32px;
 @steps-icon-custom-size: @steps-icon-size;
 @steps-icon-custom-top: 0px;
@@ -3022,12 +3357,18 @@ this.tinycolor = tinycolor;})()`;}
 @steps-vertical-icon-width: 16px;
 @steps-vertical-tail-width: 16px;
 @steps-vertical-tail-width-sm: 12px;
+// Notification
+// ---
 @notification-padding-vertical: 16px;
 @notification-padding-horizontal: 24px;
+//  Result
+// ---
 @result-title-font-size: 24px;
 @result-subtitle-font-size: @font-size-base;
 @result-icon-font-size: 72px;
 @result-extra-margin: 24px 0 0 0;
+// Image
+// ---
 @image-size-base: 48px;
 @image-font-size-base: 24px;
 @image-preview-operation-size: 18px;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Row, Col, Layout, Form, Select, message, Button, Spin } from "antd";
+import { Row, Col, Layout, message } from "antd";
 import {
-  ColorPreview,
   TypographyPreview,
   ButtonPreview,
   RadioPreview,
@@ -44,26 +43,18 @@ import {
   FormPreview,
 } from "./previews";
 
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  CloseOutlined,
-} from "@ant-design/icons";
-
 import Navbar from "./Navbar";
 import ColorPicker from "./ColorPicker";
-import darkVars from "./dark.json";
 import lightVars from "./light.json";
 import "./styles/main.less";
 
 // eslint-disable jsx-a11y/anchor-has-content
-const { Footer, Content, Sider } = Layout;
-const FormItem = Form.Item;
-const Option = Select.Option;
+const { Content } = Layout;
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
     // let initialValue = lightVars;
     // let vars = {};
     // let themeName =  localStorage.getItem("theme-name") || 'light';
@@ -97,6 +88,9 @@ class App extends Component {
     //       message.error(`Failed to update theme`);
     //     });
     // }
+  }
+  componentDidMount() {
+    window.less.modifyVars(lightVars);
   }
 
   handleSubmit = (e) => {
@@ -182,24 +176,24 @@ class App extends Component {
 
   render() {
     // const { collapsed, size, disabled, themeApplied } = this.state;
-    const colorPickerOptions = [
-      "@primary-color",
-      "@secondary-color",
-      "@text-color",
-      "@text-color-secondary",
-      "@heading-color",
-      "@layout-header-background",
-      "@btn-primary-bg",
-    ];
+    // const colorPickerOptions = [
+    //   "@primary-color",
+    //   "@secondary-color",
+    //   "@text-color",
+    //   "@text-color-secondary",
+    //   "@heading-color",
+    //   "@layout-header-background",
+    //   "@btn-primary-bg",
+    // ];
     // const colorPickers = Object.keys(this.state.vars).filter(name => colorPickerOptions.indexOf(name) > -1).map((varName, index) =>
     // const colorPickers = colorPickerOptions.map((varName, index) =>
     //   this.getColorPicker(varName, index > 3 ? "top" : "right")
     // );
 
-    const themeLayout = {
-      labelCol: { span: 24 },
-      wrapperCol: { span: 24 },
-    };
+    // const themeLayout = {
+    //   labelCol: { span: 24 },
+    //   wrapperCol: { span: 24 },
+    // };
     const disabled = false;
     const size = "default";
     return (

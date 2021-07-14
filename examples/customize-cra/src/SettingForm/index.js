@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, Form, Row, Col, Input } from "antd";
+import { Switch, Form, Row, Col, Descriptions } from "antd";
 import darkVars from "../dark.json";
 import lightVars from "../light.json";
 
@@ -11,11 +11,15 @@ const SettingForm = () => {
     setModifyVars(modifyVars);
   };
   return (
-    <>
+    <div>
       <Form layout="vertical">
         <Row>
           <Col>
-            <Form.Item label="Theme" name="Theme" valuePropName="checked">
+            <Form.Item
+              label="Change theme"
+              name="Theme"
+              valuePropName="checked"
+            >
               <Switch
                 checkedChildren="Dark"
                 unCheckedChildren="Light"
@@ -36,7 +40,22 @@ const SettingForm = () => {
           })}
         </Row> */}
       </Form>
-    </>
+      <Descriptions
+        title="Theme Config"
+        layout="vertical"
+        bordered
+        column={2}
+        size="small"
+      >
+        {Object.keys(modifyVars).map((key) => {
+          return (
+            <Descriptions.Item label={key} key={key}>
+              {modifyVars[key]}
+            </Descriptions.Item>
+          );
+        })}
+      </Descriptions>
+    </div>
   );
 };
 

@@ -1,33 +1,55 @@
-import React, { useState } from 'react';
-import { Layout, Menu, Drawer, Button } from 'antd';
-import SettingForm from '../SettingForm';
+import React, { useState } from "react";
+import { Layout, Drawer, Button, Menu } from "antd";
+import SettingForm from "../SettingForm";
 
-import './index.less';
+import "./index.less";
 
 const { Header } = Layout;
 
-
-const Navbar = props => {
+const Navbar = (props) => {
   const [visible, setVisible] = useState(false);
-  const menu = (
-    <Menu
-      theme="dark"
-      mode={visible ? 'vertical': 'horizontal'}
-      defaultSelectedKeys={['1']}
-      style={{ lineHeight: '64px' }}
-    >
-      <Menu.Item key="1">Home</Menu.Item>
-      <Menu.Item key="2">About</Menu.Item>
-      <Menu.Item key="3">Contact</Menu.Item>
-    </Menu>
-  );
+  // const menu = (
+  //   <Menu
+  //     theme="dark"
+  //     mode={visible ? 'vertical': 'horizontal'}
+  //     defaultSelectedKeys={['1']}
+  //     style={{ lineHeight: '64px' }}
+  //   >
+  //     <Menu.Item key="1">Home</Menu.Item>
+  //     <Menu.Item key="2">About</Menu.Item>
+  //     <Menu.Item key="3">Contact</Menu.Item>
+  //   </Menu>
+  // );
 
   return (
-    <Header className="app-header" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-      <div className="logo">Venus Design</div>
-      <Button onClick={() => setVisible(true)}>
-        Setting
-      </Button>
+    <Header
+      className="app-header"
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
+      <div>
+        <div className="logo">
+          <img src="favicon.png" alt="logo" />
+          <span>Venus Design</span>
+        </div>
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={["Component"]}
+        >
+          <Menu.Item key="Component">Component</Menu.Item>
+          <Menu.Item key="Design" disabled>
+            Design
+          </Menu.Item>
+          <Menu.Item key="Demo" disabled>
+            Demo
+          </Menu.Item>
+        </Menu>
+      </div>
+      <Button onClick={() => setVisible(true)}>Setting</Button>
       <Drawer
         title="Theme Setting"
         placement="right"

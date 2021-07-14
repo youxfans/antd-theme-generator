@@ -14,11 +14,15 @@ const lightVars = {
   ...colorsVars,
   ...getLessVars("./node_modules/antd/lib/style/themes/default.less"),
   "@primary-color": "@cyan-base",
+  "@bg-image": "@light-bg-image",
+  "@inner-bg": "@light-inner-bg",
 };
 const darkVars = {
   ...lightVars,
   ...getLessVars("./node_modules/antd/lib/style/themes/dark.less"),
   "@primary-color": "@orange-base",
+  "@bg-image": "@dark-bg-image",
+  "@inner-bg": "@dark-inner-bg",
 };
 fs.writeFileSync("./src/dark.json", JSON.stringify(darkVars));
 fs.writeFileSync("./src/light.json", JSON.stringify(lightVars));

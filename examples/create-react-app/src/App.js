@@ -21,12 +21,12 @@ import {
   Checkbox,
   Badge,
   List,
-  Avatar
+  Avatar,
 } from "antd";
 import moment from "moment";
 
 import ColorPicker from "./ColorPicker";
-import './styles/main.less';
+import "./styles/main.less";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -45,7 +45,7 @@ class App extends Component {
       "@text-color-secondary": "#eb2f96",
       "@heading-color": "#fa8c16",
       "@layout-header-background": "#b36e94",
-      "@btn-primary-bg": "#397dcc"
+      "@btn-primary-bg": "#397dcc",
     };
     let vars = {};
 
@@ -59,14 +59,14 @@ class App extends Component {
       this.state = { vars, initialValue };
       window.less
         .modifyVars(vars)
-        .then(() => { })
-        .catch(error => {
+        .then(() => {})
+        .catch((error) => {
           message.error(`Failed to update theme`);
         });
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
@@ -74,7 +74,7 @@ class App extends Component {
       }
     });
   };
-  normFile = e => {
+  normFile = (e) => {
     console.log("Upload event:", e);
     if (Array.isArray(e)) {
       return e;
@@ -97,12 +97,12 @@ class App extends Component {
         this.setState({ vars });
         localStorage.setItem("app-theme", JSON.stringify(vars));
       })
-      .catch(error => {
+      .catch((error) => {
         message.error(`Failed to update theme`);
       });
   };
 
-  getColorPicker = varName => (
+  getColorPicker = (varName) => (
     <Fragment key={varName}>
       <Col xs={20}>{varName}</Col>
       <Col xs={4}>
@@ -123,9 +123,9 @@ class App extends Component {
             "#1890FF",
             "#2F54EB",
             "#722ED1",
-            "#EB2F96"
+            "#EB2F96",
           ]}
-          onChangeComplete={color => this.handleColorChange(varName, color)}
+          onChangeComplete={(color) => this.handleColorChange(varName, color)}
         />
       </Col>
     </Fragment>
@@ -133,34 +133,34 @@ class App extends Component {
   resetTheme = () => {
     localStorage.setItem("app-theme", "{}");
     this.setState({ vars: this.state.initialValue });
-    window.less.modifyVars(this.state.initialValue).catch(error => {
+    window.less.modifyVars(this.state.initialValue).catch((error) => {
       message.error(`Failed to reset theme`);
     });
   };
 
   render() {
-    const colorPickers = Object.keys(this.state.vars).map(varName =>
+    const colorPickers = Object.keys(this.state.vars).map((varName) =>
       this.getColorPicker(varName)
     );
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 6 },
-      wrapperCol: { span: 18 }
+      wrapperCol: { span: 18 },
     };
 
     const listData = [
       {
-        title: "Ant Design Title 1"
+        title: "Design Title 1",
       },
       {
-        title: "Ant Design Title 2"
+        title: "Design Title 2",
       },
       {
-        title: "Ant Design Title 3"
+        title: "Design Title 3",
       },
       {
-        title: "Ant Design Title 4"
-      }
+        title: "Design Title 4",
+      },
     ];
 
     const menu = (
@@ -281,7 +281,7 @@ class App extends Component {
                     background: "#fff",
                     padding: 24,
                     margin: 0,
-                    minHeight: 280
+                    minHeight: 280,
                   }}
                 >
                   <Row>
@@ -319,9 +319,9 @@ class App extends Component {
                                   required: true,
                                   message:
                                     "Please select your favourite colors!",
-                                  type: "array"
-                                }
-                              ]
+                                  type: "array",
+                                },
+                              ],
                             })(
                               <Select
                                 mode="multiple"
@@ -337,13 +337,13 @@ class App extends Component {
                           <FormItem {...formItemLayout} label="Switch">
                             {getFieldDecorator("switch", {
                               valuePropName: "checked",
-                              initialValue: true
+                              initialValue: true,
                             })(<Switch />)}
                           </FormItem>
 
                           <FormItem {...formItemLayout} label="Radio.Group">
                             {getFieldDecorator("radio-group", {
-                              initialValue: 1
+                              initialValue: 1,
                             })(
                               <RadioGroup>
                                 <Radio value={1}>A</Radio>
@@ -356,7 +356,7 @@ class App extends Component {
 
                           <FormItem {...formItemLayout} label="Radio.Button">
                             {getFieldDecorator("radio-button", {
-                              initialValue: "a"
+                              initialValue: "a",
                             })(
                               <RadioGroup>
                                 <RadioButton value="a">item 1</RadioButton>
@@ -370,13 +370,13 @@ class App extends Component {
                         <Col xs={24} sm={12}>
                           <FormItem {...formItemLayout} label="Date">
                             {getFieldDecorator("date", {
-                              initialValue: moment()
+                              initialValue: moment(),
                             })(<DatePicker />)}
                           </FormItem>
                           <FormItem {...formItemLayout} label="Upload">
                             {getFieldDecorator("upload", {
                               valuePropName: "fileList",
-                              getValueFromEvent: this.normFile
+                              getValueFromEvent: this.normFile,
                             })(
                               <Upload
                                 name="logo"
@@ -395,18 +395,11 @@ class App extends Component {
                               Submit
                             </Button>
                           </FormItem>
-
-
-
                         </Col>
                       </Form>
                     </Col>
                   </Row>
-                  <Row
-                    type="flex"
-                    justify="left"
-                    className="secondary-color"
-                  >
+                  <Row type="flex" justify="left" className="secondary-color">
                     <Col xs={24} sm={6}>
                       <Card
                         title="Default size card"
@@ -437,18 +430,16 @@ class App extends Component {
                         <List
                           itemLayout="horizontal"
                           dataSource={listData}
-                          renderItem={item => (
+                          renderItem={(item) => (
                             <List.Item>
                               <List.Item.Meta
                                 avatar={
                                   <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                                 }
                                 title={
-                                  <a href="https://ant.design">
-                                    {item.title}
-                                  </a>
+                                  <a href="https://ant.design">{item.title}</a>
                                 }
-                                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                description="Design, a design language for background applications, is refined by Ant UED Team"
                               />
                             </List.Item>
                           )}

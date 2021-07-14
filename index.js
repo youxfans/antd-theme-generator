@@ -145,12 +145,12 @@ const reducePlugin = postcss.plugin("reducePlugin", () => {
     let removeRule = true;
     rule.walkDecls((decl) => {
       let matched = false;
-      if (String(decl.value).match(/url\(.*\)/g)) {
-        decl.remove();
-        matched = true;
-      }
+      // if (String(decl.value).match(/url\(.*\)/g)) {
+      //   decl.remove();
+      //   matched = true;
+      // }
 
-      // Removing transparent adds Link Button border color 
+      // Removing transparent adds Link Button border color
       // https://github.com/mzohaibqc/antd-theme-generator/issues/64
       // if (!matched && decl.value === 'transparent') {
       //   decl.remove();
@@ -288,9 +288,10 @@ function isValidColor(color, customColorRegexArray = []) {
     );
   }
   // eslint-disable-next-line
-  const isColor = /^(rgb|hsl|hsv)a?\((\d+%?(deg|rad|grad|turn)?[,\s]+){2,3}[\s\/]*[\d\.]+%?\)$/i.test(
-    color
-  );
+  const isColor =
+    /^(rgb|hsl|hsv)a?\((\d+%?(deg|rad|grad|turn)?[,\s]+){2,3}[\s\/]*[\d\.]+%?\)$/i.test(
+      color
+    );
   if (isColor) return true;
   if (customColorRegexArray.length > 0) {
     return customColorRegexArray.reduce((prev, regex) => {
@@ -322,23 +323,21 @@ async function compileAllLessFilesToCss(
       // if (avoidDuplicates) fileContent = fileContent.replace(/@import\ ["'](.*)["'];/g, '\n');
       const r = /@import ["'](.*)["'];/g;
       const directory = path.dirname(filePath);
-      fileContent = fileContent.replace(r, function (
-        match,
-        importPath,
-        index,
-        content
-      ) {
-        if (!importPath.endsWith(".less")) {
-          importPath += ".less";
+      fileContent = fileContent.replace(
+        r,
+        function (match, importPath, index, content) {
+          if (!importPath.endsWith(".less")) {
+            importPath += ".less";
+          }
+          const newPath = path.join(directory, importPath);
+          // If imported path/file already exists in styles paths then replace import statement with empty line
+          if (styles.indexOf(newPath) === -1) {
+            return match;
+          } else {
+            return "";
+          }
         }
-        const newPath = path.join(directory, importPath);
-        // If imported path/file already exists in styles paths then replace import statement with empty line
-        if (styles.indexOf(newPath) === -1) {
-          return match;
-        } else {
-          return "";
-        }
-      });
+      );
       Object.keys(varMap).forEach((varName) => {
         fileContent = fileContent.replace(
           new RegExp(`(:.*)(${varName})`, "g"),
@@ -584,7 +583,7 @@ async function generateTheme({
       color = color.replace("(", "\\(").replace(")", "\\)");
       if (varName === "@slider-handle-color-focus") {
         console.log("color", color, varName);
-      } 
+      }
       css = css.replace(new RegExp(color, "g"), varName);
     });
 
@@ -650,7 +649,7 @@ module.exports = {
 function minifyCss(css) {
   // Removed all comments and empty lines
   css = css
-    .replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, "")
+    // .replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, "")
     .replace(/^\s*$(?:\r\n?|\n)/gm, "");
 
   /*
