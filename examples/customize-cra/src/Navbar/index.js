@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Layout, Drawer, Button, Menu } from "antd";
+import { Link } from "react-router-dom";
 import SettingForm from "../SettingForm";
 
 import "./index.less";
@@ -8,18 +9,6 @@ const { Header } = Layout;
 
 const Navbar = (props) => {
   const [visible, setVisible] = useState(false);
-  // const menu = (
-  //   <Menu
-  //     theme="dark"
-  //     mode={visible ? 'vertical': 'horizontal'}
-  //     defaultSelectedKeys={['1']}
-  //     style={{ lineHeight: '64px' }}
-  //   >
-  //     <Menu.Item key="1">Home</Menu.Item>
-  //     <Menu.Item key="2">About</Menu.Item>
-  //     <Menu.Item key="3">Contact</Menu.Item>
-  //   </Menu>
-  // );
 
   return (
     <Header
@@ -32,17 +21,21 @@ const Navbar = (props) => {
     >
       <div>
         <div className="logo">
-          <img src="favicon.png" alt="logo" />
-          <span>Venus Design</span>
+          <Link to="/">
+            <img src="favicon.png" alt="logo" />
+            <span>Venus Design</span>
+          </Link>
         </div>
         <Menu
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["Component"]}
         >
-          <Menu.Item key="Component">Component</Menu.Item>
-          <Menu.Item key="Design" disabled>
-            Design
+          <Menu.Item key="Component">
+            <Link to="component">Component</Link>
+          </Menu.Item>
+          <Menu.Item key="Design">
+            <Link to="design">Design</Link>
           </Menu.Item>
           <Menu.Item key="Demo" disabled>
             Demo
@@ -60,21 +53,6 @@ const Navbar = (props) => {
       >
         <SettingForm />
       </Drawer>
-      {/* <Default>{menu}</Default>
-      <Mobile>
-        <Icon type="bars" size="large" className="nav-icon" onClick={() => setVisible(true)} />
-        <Drawer
-          title=""
-          placement="right"
-          closable
-          onClose={() => setVisible(false)}
-          visible={visible}
-          className="nav-drawer"
-        >
-          <div className="logo">Venus Design</div>
-          {menu}
-        </Drawer>
-      </Mobile> */}
     </Header>
   );
 };
